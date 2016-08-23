@@ -1,0 +1,2 @@
+# MiniQQ
+study
