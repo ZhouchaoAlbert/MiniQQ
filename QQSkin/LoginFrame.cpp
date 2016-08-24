@@ -13,15 +13,15 @@ CLoginFrame::~CLoginFrame()
 
 CDuiString CLoginFrame::GetSkinFolder()
 {
-	return _T("");
+	return _T("Resource");
 }
 
 CDuiString CLoginFrame::GetSkinFile()
 {
-	return _T("");
+	return _T("xml\\LoginFrame.xml");
 }
 
 LPCTSTR CLoginFrame::GetWindowClassName(void) const
 {
-	return 0;
+	return _T("LoginFrameClass");
 }

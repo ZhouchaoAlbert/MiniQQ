@@ -65,7 +65,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Lib\</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>..\Output\PdbD\$(TargetName).pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>QQSkinD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>QQSkinD.lib;DuilibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
