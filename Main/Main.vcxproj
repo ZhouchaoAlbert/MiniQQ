@@ -44,7 +44,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\Output\Release\</OutDir>
+    <OutDir>..\Output\Debug\</OutDir>
     <TargetName>MiniQQD</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -64,7 +64,8 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Lib\</AdditionalLibraryDirectories>
-      <ProgramDatabaseFile>..\Output\Pdb\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>..\Output\PdbD\$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>QQSkinD.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
