@@ -1,16 +1,27 @@
 #include <windows.h>
 #include "UtilPath.h"
+#include "AuxMainUI.h"
+#include <UIlib.h>
+using namespace DuiLib;
 
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int nCmdShow)
 {
 	
-	CString strPath;
+	DuiLib::CPaintManagerUI::SetInstance(hInstance);
+	CString s = Util::Path::GetResFolder();
+	DuiLib::CPaintManagerUI::SetResourcePath(s);
 
-	strPath = Util::Path::GetAppPath();
-	Util::Path::GetCurrentDir();
-	Util::Path::GetTempPath();
+	//Aux::MainUI::LoginFrame();
 
-	Util::Path::CreateDirectory(_T("C:\\A\\B\\C\\D\\E"), NULL);
+ 	//CString strPath;
+// 
+ 	///strPath = Util::Path::GetAppPath();
+	//strPath = Util::Path::GetResFolder();
+// 	Util::Path::GetCurrentDir();
+// 	Util::Path::GetTempPath();
+// 	Util::Path::CreateDirectory(_T("C:\\A\\B\\C\\D\\E"), NULL);
+
+
 
 	::CoUninitialize();
 	return 0;

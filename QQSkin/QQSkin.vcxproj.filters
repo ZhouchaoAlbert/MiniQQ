@@ -13,27 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="头文件\Path">
+    <Filter Include="Singleton">
+      <UniqueIdentifier>{12e4d74f-51a7-4483-a58d-b2d41a77af3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Path">
       <UniqueIdentifier>{4e589849-1ff9-44a4-9226-3764a0296afa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\String">
+    <Filter Include="String">
       <UniqueIdentifier>{ee11c5e9-0e78-4fc2-b9af-935cec8fe2d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame">
+      <UniqueIdentifier>{ee120349-2161-48df-8dbd-773a661d6493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainUI">
+      <UniqueIdentifier>{00492065-1400-4c5d-aee8-e4832d85a066}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UtilPath.cpp">
-      <Filter>头文件\Path</Filter>
+      <Filter>Path</Filter>
     </ClCompile>
     <ClCompile Include="UtilString.cpp">
-      <Filter>头文件\String</Filter>
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginFrame.cpp">
+      <Filter>Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="AuxMainUI.cpp">
+      <Filter>MainUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilPath.h">
-      <Filter>头文件\Path</Filter>
+      <Filter>Path</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\UtilString.h">
-      <Filter>头文件\String</Filter>
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Singleton.h">
+      <Filter>Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginFrame.h">
+      <Filter>Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\AuxMainUI.h">
+      <Filter>MainUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

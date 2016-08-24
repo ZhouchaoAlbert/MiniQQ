@@ -103,6 +103,32 @@ CString Util::Path::GetTempFileName(LPCTSTR lpszFileName)
 	return GetRandomFileName(GetTempPath(), lpszFileName);
 }
 
+CString  Util::Path::GetInstallFolder()    //获取安装目录
+{
+	CString strPath = GetAppPath();
+	ATLASSERT(!strPath.IsEmpty());
+
+	INT32 ix = strPath.ReverseFind(_T('\\'));
+	if (ix != -1)
+	{
+		return strPath.Mid(0, ix);
+	}
+	ATLASSERT(FALSE);
+	return _T("");
+}
+
+
+
+CString Util::Path::GetResFolder()
+{
+	return GetInstallFolder() + _T("\\Resource");
+}
+
+CString Util::Path::GetResXmlFolder()
+{
+	return GetResFolder() + _T("\\xml");
+}
+
 BOOL Util::Path::IsDirectory(LPCTSTR lpszPath)
 {
 	if (NULL == lpszPath || NULL == *lpszPath)
