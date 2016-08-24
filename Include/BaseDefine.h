@@ -4,7 +4,10 @@
 #include <tchar.h>
 #include <wtypes.h>
 #include <stdlib.h>
-
+#include <atlstr.h>
+using namespace ATL;
+#include <vector>
+using namespace std;
 #define EC_TRACE ATLTRACE
 
 #define my_min(x, y)				((x) < (y) ? (x) : (y))

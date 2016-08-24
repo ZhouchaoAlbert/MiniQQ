@@ -86,9 +86,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="UtilPath.cpp" />
+    <ClCompile Include="UtilString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilPath.h" />
+    <ClInclude Include="..\Include\UtilString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

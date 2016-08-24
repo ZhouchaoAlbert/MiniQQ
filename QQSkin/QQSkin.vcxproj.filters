@@ -16,15 +16,24 @@
     <Filter Include="头文件\Path">
       <UniqueIdentifier>{4e589849-1ff9-44a4-9226-3764a0296afa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\String">
+      <UniqueIdentifier>{ee11c5e9-0e78-4fc2-b9af-935cec8fe2d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UtilPath.cpp">
       <Filter>头文件\Path</Filter>
     </ClCompile>
+    <ClCompile Include="UtilString.cpp">
+      <Filter>头文件\String</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilPath.h">
       <Filter>头文件\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UtilString.h">
+      <Filter>头文件\String</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
