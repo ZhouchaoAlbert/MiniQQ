@@ -45,3 +45,20 @@ void CLoginFrame::InitWindow()
 	CString strIcon = Util::Path::GetResMaterialFolder() + _T("\\DefaultFace.png");
 	m_pHeadIcon->SetHeadIcon(strIcon);
 }
+
+void CLoginFrame::Notify(TNotifyUI& msg)
+{
+	if (msg.sType == DUI_MSGTYPE_CLICK)
+	{
+		CDuiString szName = msg.pSender->GetName();
+		if (szName == _T("btn_close"))
+		{
+			Close();
+		}
+		else if (szName == _T("btn_min"))
+		{
+			SendMessage(WM_SYSCOMMAND, SC_MINIMIZE, 0);
+		}
+	}
+
+}
