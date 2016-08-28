@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window  size="350,266"  caption ="0,0,0,30"  roundcorner="4,4" showshadow="true" shadowsize="5" shadowposition="1,1" shadowcolor="#333333">
+	<Font name="微软雅黑" size="12" bold="false" default="true" />
+	<Font name="微软雅黑" size="11" bold="false" />
+	<Font name="微软雅黑" size="14" bold="false" />
+	<Font name="微软雅黑" size="16" bold="false" />
+	<VerticalLayout bkcolor="#FFFFFFFF" hole="true">
+		<VerticalLayout bkimage="material/LoginBg.png">
+			<HorizontalLayout height ="30" >
+				<Label name ="EC" text="MiniQQ" width="70" textcolor="#FFFFFFFF" inset="0,8,0,0" textpadding="10,0,0,0" />
+				<Control />
+				<!--系统按钮-->
+				<HorizontalLayout height="20" width="56">
+					<Button name="btn_min" width="28" height="20" normalimage="material/btn_mini_normal.png" hotimage="material/btn_mini_highlight.png" pushedimage="material/btn_mini_down.png"/>
+					<Button name="btn_close" width="28" height="20" normalimage="material/btn_close_normal.png" hotimage="material/btn_close_highlight.png" pushedimage="material/btn_close_down.png"/>
+				</HorizontalLayout>
+			</HorizontalLayout>
+		
+			<Control height="90"/>
+			
+			<HorizontalLayout height="100">
+					<Control width = "20"/>
+					<HeadIconUI name="user_icon" bkimage="material/loading_pic.png" width="100" circleborderwidth="10" />
+					<Control />
+			</HorizontalLayout>
+		</VerticalLayout>
+	</VerticalLayout>
+</Window>
