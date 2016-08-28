@@ -28,6 +28,9 @@
     <Filter Include="MainUI">
       <UniqueIdentifier>{00492065-1400-4c5d-aee8-e4832d85a066}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Control">
+      <UniqueIdentifier>{1e192de7-cda4-4f15-9358-433a0dfa7ee2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UtilPath.cpp">
@@ -41,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="AuxMainUI.cpp">
       <Filter>MainUI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIHeadIcon.cpp">
+      <Filter>Control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\AuxMainUI.h">
       <Filter>MainUI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIHeadIcon.h">
+      <Filter>Control</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

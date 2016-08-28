@@ -14,6 +14,7 @@ namespace Util
 		COMMON_API  CString GetTempFileName(LPCTSTR lpszFileName);						//获取当前系统的临时文件夹的路径下的唯一命名的临时文件名(全路径)
 		COMMON_API  CString GetInstallFolder();    //获取安装目录
 		COMMON_API  CString GetResFolder();			 //获取主Res所在目录
+		COMMON_API  CString GetResMaterialFolder();			 //获取主Res所在目录
 		COMMON_API  CString GetResXmlFolder();	     //获取主Resource::XML所在目录
 	
 		COMMON_API  BOOL IsDirectory(LPCTSTR lpszPath);			// 检测指定路径是否目录

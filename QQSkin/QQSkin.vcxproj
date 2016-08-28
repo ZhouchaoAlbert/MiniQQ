@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="AuxMainUI.cpp" />
     <ClCompile Include="LoginFrame.cpp" />
+    <ClCompile Include="UIHeadIcon.cpp" />
     <ClCompile Include="UtilPath.cpp" />
     <ClCompile Include="UtilString.cpp" />
   </ItemGroup>
@@ -96,6 +97,7 @@
     <ClInclude Include="..\Include\UtilPath.h" />
     <ClInclude Include="..\Include\UtilString.h" />
     <ClInclude Include="LoginFrame.h" />
+    <ClInclude Include="UIHeadIcon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

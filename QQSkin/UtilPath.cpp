@@ -124,6 +124,11 @@ CString Util::Path::GetResFolder()
 	return GetInstallFolder() + _T("\\Resource");
 }
 
+CString Util::Path::GetResMaterialFolder()
+{
+	return GetResFolder() + _T("\\material");
+}
+
 CString Util::Path::GetResXmlFolder()
 {
 	return GetResFolder() + _T("\\xml");
