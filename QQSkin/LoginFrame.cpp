@@ -33,7 +33,10 @@ CControlUI* CLoginFrame::CreateControl(LPCTSTR pstrClass)
 	{
 		return new CUIHeadIcon();
 	}
-
+	else if (_tcscmp(pstrClass, _T("EditCombUI")) == 0)
+	{
+		return new CUIHeadIcon();
+	}
 	return NULL;
 }
 

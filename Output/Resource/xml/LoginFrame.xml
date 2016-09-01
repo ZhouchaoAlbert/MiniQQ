@@ -18,11 +18,13 @@
 		
 			<Control height="90"/>
 			
-			<HorizontalLayout height="100">
-					<Control width = "20"/>
-					<HeadIconUI name="user_icon" bkimage="material/loading_pic.png" width="100" circleborderwidth="10" />
-					<Control />
+			<HorizontalLayout >
+				<VerticalLayout width = "100">
+						<HeadIconUI name="user_icon" bkimage="material/loading_pic.png" height="100" circleborderwidth="10" />
+				</VerticalLayout>
+
 			</HorizontalLayout>
+			
 		</VerticalLayout>
 	</VerticalLayout>
 </Window>
