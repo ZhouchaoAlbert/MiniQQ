@@ -1,6 +1,7 @@
 #pragma once
 #include <UIlib.h>
 #include "UIHeadIcon.h"
+#include "UIEditComb.h"
 using namespace DuiLib;
 
 class CLoginFrame : public WindowImplBase
@@ -17,6 +18,6 @@ public:
 	virtual void Notify(TNotifyUI& msg);
 
 private:
-	CUIHeadIcon* m_pHeadIcon;
+	CHeadIconUI* m_pHeadIcon;
 };
 

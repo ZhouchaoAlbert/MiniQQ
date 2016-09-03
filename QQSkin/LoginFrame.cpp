@@ -31,11 +31,11 @@ CControlUI* CLoginFrame::CreateControl(LPCTSTR pstrClass)
 {
 	if (_tcscmp(pstrClass, _T("HeadIconUI")) == 0)
 	{
-		return new CUIHeadIcon();
+		return new CHeadIconUI();
 	}
 	else if (_tcscmp(pstrClass, _T("EditCombUI")) == 0)
 	{
-		return new CUIHeadIcon();
+		return new CEditCombUI();
 	}
 	return NULL;
 }
@@ -43,7 +43,7 @@ CControlUI* CLoginFrame::CreateControl(LPCTSTR pstrClass)
 void CLoginFrame::InitWindow()
 {
 
-	m_pHeadIcon = static_cast<CUIHeadIcon*>(m_PaintManager.FindControl(_T("user_icon")));
+	m_pHeadIcon = static_cast<CHeadIconUI*>(m_PaintManager.FindControl(_T("user_icon")));
 
 	CString strIcon = Util::Path::GetResMaterialFolder() + _T("\\DefaultFace.png");
 	m_pHeadIcon->SetHeadIcon(strIcon);

@@ -4,33 +4,33 @@
 
 namespace DuiLib{
 
-CUIHeadIcon::CUIHeadIcon()
+CHeadIconUI::CHeadIconUI()
 {
     m_nCircleBorderWidth = 0;
 }
 
-CUIHeadIcon::~CUIHeadIcon()
+CHeadIconUI::~CHeadIconUI()
 {
 }
 
-LPCTSTR CUIHeadIcon::GetClass() const
+LPCTSTR CHeadIconUI::GetClass() const
 {
     return _T("HeadIconUI");
 }
 
-	LPVOID CUIHeadIcon::GetInterface(LPCTSTR pstrName)
+LPVOID CHeadIconUI::GetInterface(LPCTSTR pstrName)
 {
-	if (_tcscmp(pstrName, _T("HeadIconUI")) == 0) return static_cast<CUIHeadIcon*>(this);
+	if (_tcscmp(pstrName, _T("HeadIconUI")) == 0) return static_cast<CHeadIconUI*>(this);
     return __super::GetInterface(pstrName);
 }
 
-void CUIHeadIcon::SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue)
+void CHeadIconUI::SetAttribute(LPCTSTR pstrName, LPCTSTR pstrValue)
 {
     if (_tcscmp(pstrName, _T("circleborderwidth")) == 0) SetCircleBorderWidth(_ttoi(pstrValue));
     else __super::SetAttribute(pstrName, pstrValue);
 }
 
-void CUIHeadIcon::PaintBkImage(HDC hDC)
+void CHeadIconUI::PaintBkImage(HDC hDC)
 {
     __super::PaintBkImage(hDC);
 
@@ -72,13 +72,13 @@ void CUIHeadIcon::PaintBkImage(HDC hDC)
 #endif
 }
 
-void CUIHeadIcon::SetCircleBorderWidth(UINT nWidth)
+void CHeadIconUI::SetCircleBorderWidth(UINT nWidth)
 {
     m_nCircleBorderWidth = nWidth;
     Invalidate();
 }
 
-void CUIHeadIcon::SetHeadIcon(LPCTSTR szIcon)
+void CHeadIconUI::SetHeadIcon(LPCTSTR szIcon)
 {
 	m_strUserIcon = szIcon;
     Invalidate();

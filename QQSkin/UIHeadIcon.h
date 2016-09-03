@@ -3,11 +3,11 @@
 
 namespace DuiLib{
 
-class CUIHeadIcon : public CControlUI
+class CHeadIconUI : public CControlUI
 {
 public:
-	CUIHeadIcon();
-	~CUIHeadIcon();
+	CHeadIconUI();
+	~CHeadIconUI();
 public:
     LPCTSTR GetClass() const;
     LPVOID GetInterface(LPCTSTR pstrName);

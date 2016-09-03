@@ -4,6 +4,7 @@
 	<Font name="微软雅黑" size="11" bold="false" />
 	<Font name="微软雅黑" size="14" bold="false" />
 	<Font name="微软雅黑" size="16" bold="false" />
+	<Default name="EditCombUI" value="normalimage=&quot;file='material/login_btn_normal.png' corner='5,5,5,5'&quot; hotimage=&quot;file='material/login_btn_highlight.png' corner='5,5,5,5'&quot; pushedimage=&quot;file='material/login_btn_down.png' corner='5,5,5,5'&quot; focusedimage=&quot;file='material/login_btn_focus.png' corner='5,5,5,5'&quot;"/>
 	<VerticalLayout bkcolor="#FFFFFFFF" hole="true">
 		<VerticalLayout bkimage="material/LoginBg.png">
 			<HorizontalLayout height ="30" >
@@ -20,9 +21,17 @@
 			
 			<HorizontalLayout >
 				<VerticalLayout width = "100">
-						<HeadIconUI name="user_icon" bkimage="material/loading_pic.png" height="100" circleborderwidth="10" />
+					<HeadIconUI name="user_icon" bkimage="material/loading_pic.png" height="100" circleborderwidth="10" />
 				</VerticalLayout>
 
+				<VerticalLayout width = "190">
+					<HorizontalLayout inset="4,4,2,4" height="34">
+						<EditCombUI name="login_edt_acount"  numberonly="true" text="" width="180"  maxchar="22" endellipsis="true" textpadding="4,2,4,2" tipvalue="请输入用户名" tipvaluecolor="#FFB6B6B6" textcolor="#FF080808" arrowwidth="21" normalarrow="material/down.png" droparrow="material/up.png"/>
+					</HorizontalLayout>
+					<HorizontalLayout inset="4,4,2,4" height="34">
+						<EditCombUI name="login_edt_pwd"  numberonly="true" text="" passwordchar="●" width="180"  maxchar="22" endellipsis="true" textpadding="4,2,4,2" tipvalue="请输入密码" tipvaluecolor="#FFB6B6B6" textcolor="#FF080808" arrowwidth="21" normalarrow="material/keyboard.png" droparrow="material/up.png"/>
+					</HorizontalLayout>
+				</VerticalLayout>
 			</HorizontalLayout>
 			
 		</VerticalLayout>
