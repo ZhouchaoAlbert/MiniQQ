@@ -51,6 +51,9 @@
     <ClCompile Include="UIEditComb.cpp">
       <Filter>Control</Filter>
     </ClCompile>
+    <ClCompile Include="UIIPAddress.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilPath.h">
@@ -72,6 +75,9 @@
       <Filter>Control</Filter>
     </ClInclude>
     <ClInclude Include="UIEditComb.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="UIIPAddress.h">
       <Filter>Control</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,6 +2,7 @@
 #include <UIlib.h>
 #include "UIHeadIcon.h"
 #include "UIEditComb.h"
+#include "UIIPAddress.h"
 using namespace DuiLib;
 
 class CLoginFrame : public WindowImplBase
@@ -19,5 +20,8 @@ public:
 
 private:
 	CHeadIconUI* m_pHeadIcon;
+
+	CIPAddressUI* m_ip;
+	CVerticalLayoutUI* m_HorIp;
 };
 

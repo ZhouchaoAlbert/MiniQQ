@@ -89,6 +89,7 @@
     <ClCompile Include="LoginFrame.cpp" />
     <ClCompile Include="UIEditComb.cpp" />
     <ClCompile Include="UIHeadIcon.cpp" />
+    <ClCompile Include="UIIPAddress.cpp" />
     <ClCompile Include="UtilPath.cpp" />
     <ClCompile Include="UtilString.cpp" />
   </ItemGroup>
@@ -100,6 +101,7 @@
     <ClInclude Include="LoginFrame.h" />
     <ClInclude Include="UIEditComb.h" />
     <ClInclude Include="UIHeadIcon.h" />
+    <ClInclude Include="UIIPAddress.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
