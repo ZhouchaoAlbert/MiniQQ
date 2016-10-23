@@ -245,7 +245,9 @@ CControlUI* CDialogBuilder::Create(IDialogBuilderCallback* pCallback, CPaintMana
             }
         }
     }
-    return _Parse(&root, pParent, pManager);
+	CControlUI* p = _Parse(&root, pParent, pManager);
+
+	return p;
 }
 
 CMarkup* CDialogBuilder::GetMarkup()
@@ -295,19 +297,20 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
             }
             continue;
         }
-		//树控件XML解析
-		else if( _tcscmp(pstrClass, _T("TreeNode")) == 0 ) {
+		else if( _tcscmp(pstrClass, _T("TreeNode")) == 0 ) 	//树控件XML解析
+		{
 			CTreeNodeUI* pParentNode	= static_cast<CTreeNodeUI*>(pParent->GetInterface(_T("TreeNode")));
 			CTreeNodeUI* pNode			= new CTreeNodeUI();
-			if(pParentNode){
+			if(pParentNode)
+			{
 				if(!pParentNode->Add(pNode)){
 					delete pNode;
 					continue;
 				}
 			}
-
 			// 若有控件默认配置先初始化默认属性
-			if( pManager ) {
+			if( pManager ) 
+			{
 				pNode->SetManager(pManager, NULL, false);
 				LPCTSTR pDefaultAttributes = pManager->GetDefaultAttributeList(pstrClass);
 				if( pDefaultAttributes ) {
@@ -316,7 +319,8 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
 			}
 
 			// 解析所有属性并覆盖默认属性
-			if( node.HasAttributes() ) {
+			if( node.HasAttributes() ) 
+			{
 				TCHAR szValue[500] = { 0 };
 				SIZE_T cchLen = lengthof(szValue) - 1;
 				// Set ordinary attributes
@@ -327,7 +331,8 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
 			}
 
 			//检索子节点及附加控件
-			if(node.HasChildren()){
+			if(node.HasChildren())
+			{
 				CControlUI* pSubControl = _Parse(&node,pNode,pManager);
 				if(pSubControl && _tcscmp(pSubControl->GetClass(),_T("TreeNodeUI")) != 0)
 				{
@@ -338,20 +343,24 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
 				}
 			}
 
-			if(!pParentNode){
+			if(!pParentNode)
+			{
 				CTreeViewUI* pTreeView = static_cast<CTreeViewUI*>(pParent->GetInterface(_T("TreeView")));
 				ASSERT(pTreeView);
 				if( pTreeView == NULL ) return NULL;
-				if( !pTreeView->Add(pNode) ) {
+				if( !pTreeView->Add(pNode) )
+				{
 					delete pNode;
 					continue;
 				}
 			}
 			continue;
 		}
-        else {
+        else 
+		{
             SIZE_T cchLen = _tcslen(pstrClass);
-            switch( cchLen ) {
+            switch( cchLen )
+			{
             case 4:
                 if( _tcscmp(pstrClass, DUI_CTR_EDIT) == 0 )                   pControl = new CEditUI;
                 else if( _tcscmp(pstrClass, DUI_CTR_LIST) == 0 )              pControl = new CListUI;
@@ -414,7 +423,8 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
                 break;
             }
             // User-supplied control factory
-            if( pControl == NULL ) {
+            if( pControl == NULL )
+			{
                 CStdPtrArray* pPlugins = CPaintManagerUI::GetPlugins();
                 LPCREATECONTROL lpCreateControl = NULL;
                 for( int i = 0; i < pPlugins->GetSize(); ++i ) {
@@ -425,8 +435,9 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
                     }
                 }
             }
-            if( pControl == NULL && m_pCallback != NULL ) {
-                pControl = m_pCallback->CreateControl(pstrClass);
+            if( pControl == NULL && m_pCallback != NULL )
+			{
+                pControl = m_pCallback->CreateControl(pstrClass); //创建控件
             }
         }
 
@@ -443,49 +454,60 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
 			}
 
         // Add children
-        if( node.HasChildren() ) {
-            _Parse(&node, pControl, pManager);
+        if( node.HasChildren() ) 
+		{
+            _Parse(&node, pControl, pManager); //利用递规，遍历XML树 
         }
         // Attach to parent
         // 因为某些属性和父窗口相关，比如selected，必须先Add到父窗口
-		if( pParent != NULL ) {
+		if( pParent != NULL ) 
+		{   
 			CTreeNodeUI* pContainerNode = static_cast<CTreeNodeUI*>(pParent->GetInterface(_T("TreeNode")));
 			if(pContainerNode)
 				pContainerNode->GetTreeNodeHoriznotal()->Add(pControl);
 			else
-			{
-				if( pContainer == NULL ) pContainer = static_cast<IContainerUI*>(pParent->GetInterface(_T("IContainer")));
+			{////如果它的父亲不为空，说明它的父结点肯定具有Container属性，所以把它加到它的父结点的Container中  
+				if( pContainer == NULL ) 
+					pContainer = static_cast<IContainerUI*>(pParent->GetInterface(_T("IContainer")));
 				ASSERT(pContainer);
-				if( pContainer == NULL ) return NULL;
-				if( !pContainer->Add(pControl) ) {
+				if( pContainer == NULL ) 
+					return NULL;
+				if( !pContainer->Add(pControl) )
+				{
 					delete pControl;
 					continue;
 				}
 			}
 		}
         // Init default attributes
-        if( pManager ) {
+        if( pManager ) 
+		{
             pControl->SetManager(pManager, NULL, false);
             LPCTSTR pDefaultAttributes = pManager->GetDefaultAttributeList(pstrClass);
-            if( pDefaultAttributes ) {
+            if( pDefaultAttributes )
+			{
                 pControl->ApplyAttributeList(pDefaultAttributes);
             }
         }
         // Process attributes
-        if( node.HasAttributes() ) {
+        if( node.HasAttributes() ) 
+		{  ///分析属性，然后设置控件属性
             TCHAR szValue[500] = { 0 };
             SIZE_T cchLen = lengthof(szValue) - 1;
             // Set ordinary attributes
             int nAttributes = node.GetAttributeCount();
-            for( int i = 0; i < nAttributes; i++ ) {
+            for( int i = 0; i < nAttributes; i++ ) 
+			{
                 pControl->SetAttribute(node.GetAttributeName(i), node.GetAttributeValue(i));
             }
         }
-        if( pManager ) {
+        if( pManager ) 
+		{
             pControl->SetManager(NULL, NULL, false);
         }
         // Return first item
-        if( pReturn == NULL ) pReturn = pControl;
+		if (pReturn == NULL)  
+			pReturn = pControl;
     }
     return pReturn;
 }

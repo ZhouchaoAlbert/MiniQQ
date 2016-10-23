@@ -8,7 +8,7 @@
 	<VerticalLayout bkcolor="#FFFFFFFF" hole="true">
 		<VerticalLayout bkimage="material/LoginBg.png">
 			<HorizontalLayout height ="30" >
-				<Label name ="EC" text="MiniQQ" width="70" textcolor="#FFFFFFFF" inset="0,8,0,0" textpadding="10,0,0,0" />
+				<Label  text="MiniQQ" width="70" textcolor="#FFFFFFFF" inset="0,8,0,0" textpadding="10,0,0,0" />
 				<Control />
 				<!--系统按钮-->
 				<HorizontalLayout height="20" width="56">

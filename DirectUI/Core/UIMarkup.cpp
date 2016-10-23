@@ -267,7 +267,8 @@ bool CMarkup::LoadFromMem(BYTE* pByte, DWORD dwSize, int encoding)
         {
             pByte += 3; dwSize -= 3;
         }
-        DWORD nWide = ::MultiByteToWideChar( CP_UTF8, 0, (LPCSTR)pByte, dwSize, NULL, 0 );
+	
+        DWORD nWide = ::MultiByteToWideChar( CP_UTF8, 0, (LPCSTR)pByte, dwSize, NULL, 0);
 
         m_pstrXML = static_cast<LPTSTR>(malloc((nWide + 1)*sizeof(TCHAR)));
         ::MultiByteToWideChar( CP_UTF8, 0, (LPCSTR)pByte, dwSize, m_pstrXML, nWide );
@@ -474,24 +475,27 @@ bool CMarkup::_Parse(LPTSTR& pstrText, ULONG iParent)
         if( pstrText[1] == _T('/') ) return true;
         *pstrText++ = _T('\0');
         _SkipWhitespace(pstrText);
-        // Skip comment or processing directive
+        // Skip comment or processing directive  //跳过注释 <!-- --> 和开头<? ?>
         if( *pstrText == _T('!') || *pstrText == _T('?') ) {
             TCHAR ch = *pstrText;
             if( *pstrText == _T('!') ) ch = _T('-');
-            while( *pstrText != _T('\0') && !(*pstrText == ch && *(pstrText + 1) == _T('>')) ) pstrText = ::CharNext(pstrText);
+            while( *pstrText != _T('\0') && !(*pstrText == ch && *(pstrText + 1) == _T('>')) ) 
+				pstrText = ::CharNext(pstrText);
             if( *pstrText != _T('\0') ) pstrText += 2;
             _SkipWhitespace(pstrText);
             continue;
         }
         _SkipWhitespace(pstrText);
         // Fill out element structure
-        XMLELEMENT* pEl = _ReserveElement();
+        XMLELEMENT* pEl = _ReserveElement(); //节点存储，少了则扩展
         ULONG iPos = pEl - m_pElements;
         pEl->iStart = pstrText - m_pstrXML;
         pEl->iParent = iParent;
         pEl->iNext = pEl->iChild = 0;
-        if( iPrevious != 0 ) m_pElements[iPrevious].iNext = iPos;
-        else if( iParent > 0 ) m_pElements[iParent].iChild = iPos;
+        if( iPrevious != 0 ) 
+			m_pElements[iPrevious].iNext = iPos;
+        else if( iParent > 0 ) 
+			m_pElements[iParent].iChild = iPos;
         iPrevious = iPos;
         // Parse name
         LPCTSTR pstrName = pstrText;
@@ -499,11 +503,11 @@ bool CMarkup::_Parse(LPTSTR& pstrText, ULONG iParent)
         LPTSTR pstrNameEnd = pstrText;
         if( *pstrText == _T('\0') ) return _Failed(_T("Error parsing element name"), pstrText);
         // Parse attributes
-        if( !_ParseAttributes(pstrText) ) return false;
+        if( !_ParseAttributes(pstrText) ) return false;  //解析属性
         _SkipWhitespace(pstrText);
         if( pstrText[0] == _T('/') && pstrText[1] == _T('>') )
         {
-            pEl->iData = pstrText - m_pstrXML;
+            pEl->iData = pstrText - m_pstrXML;  //存放数据个数
             *pstrText = _T('\0');
             pstrText += 2;
         }

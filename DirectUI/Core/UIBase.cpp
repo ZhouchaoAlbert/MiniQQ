@@ -249,14 +249,14 @@ HWND CWindowWnd::Create(HWND hwndParent, LPCTSTR pstrName, DWORD dwStyle, DWORD 
     return Create(hwndParent, pstrName, dwStyle, dwExStyle, rc.left, rc.top, rc.right - rc.left, rc.bottom - rc.top, hMenu);
 }
 
-HWND CWindowWnd::Create(HWND hwndParent, LPCTSTR pstrName, DWORD dwStyle, DWORD dwExStyle, int x, int y, int cx, int cy, HMENU hMenu)
-{
-    if( GetSuperClassName() != NULL && !RegisterSuperclass() ) return NULL;
-    if( GetSuperClassName() == NULL && !RegisterWindowClass() ) return NULL;
-    m_hWnd = ::CreateWindowEx(dwExStyle, GetWindowClassName(), pstrName, dwStyle, x, y, cx, cy, hwndParent, hMenu, CPaintManagerUI::GetInstance(), this);
-    ASSERT(m_hWnd!=NULL);
-    return m_hWnd;
-}
+	HWND CWindowWnd::Create(HWND hwndParent, LPCTSTR pstrName, DWORD dwStyle, DWORD dwExStyle, int x, int y, int cx, int cy, HMENU hMenu)
+	{
+		if( GetSuperClassName() != NULL && !RegisterSuperclass() ) return NULL;
+		if( GetSuperClassName() == NULL && !RegisterWindowClass() ) return NULL;
+		m_hWnd = ::CreateWindowEx(dwExStyle, GetWindowClassName(), pstrName, dwStyle, x, y, cx, cy, hwndParent, hMenu, CPaintManagerUI::GetInstance(), this);
+		ASSERT(m_hWnd!=NULL);
+		return m_hWnd;
+	}
 
 HWND CWindowWnd::Subclass(HWND hWnd)
 {
@@ -383,20 +383,20 @@ void CWindowWnd::SetIcon(UINT nRes)
 
 bool CWindowWnd::RegisterWindowClass()
 {
-    WNDCLASS wc = { 0 };
-    wc.style = GetClassStyle();
-    wc.cbClsExtra = 0;
-    wc.cbWndExtra = 0;
-    wc.hIcon = NULL;
-    wc.lpfnWndProc = CWindowWnd::__WndProc;
-    wc.hInstance = CPaintManagerUI::GetInstance();
-    wc.hCursor = ::LoadCursor(NULL, IDC_ARROW);
-    wc.hbrBackground = NULL;
-    wc.lpszMenuName  = NULL;
-    wc.lpszClassName = GetWindowClassName();
-    ATOM ret = ::RegisterClass(&wc);
-    ASSERT(ret!=NULL || ::GetLastError()==ERROR_CLASS_ALREADY_EXISTS);
-    return ret != NULL || ::GetLastError() == ERROR_CLASS_ALREADY_EXISTS;
+	WNDCLASS wc = { 0 };
+	wc.style = GetClassStyle();
+	wc.cbClsExtra = 0;
+	wc.cbWndExtra = 0;
+	wc.hIcon = NULL;
+	wc.lpfnWndProc = CWindowWnd::__WndProc;
+	wc.hInstance = CPaintManagerUI::GetInstance();
+	wc.hCursor = ::LoadCursor(NULL, IDC_ARROW);
+	wc.hbrBackground = NULL;
+	wc.lpszMenuName = NULL;
+	wc.lpszClassName = GetWindowClassName();
+	ATOM ret = ::RegisterClass(&wc);
+	ASSERT(ret != NULL || ::GetLastError() == ERROR_CLASS_ALREADY_EXISTS);
+	return ret != NULL || ::GetLastError() == ERROR_CLASS_ALREADY_EXISTS;
 }
 
 bool CWindowWnd::RegisterSuperclass()
@@ -420,33 +420,33 @@ bool CWindowWnd::RegisterSuperclass()
     return ret != NULL || ::GetLastError() == ERROR_CLASS_ALREADY_EXISTS;
 }
 
-LRESULT CALLBACK CWindowWnd::__WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-    CWindowWnd* pThis = NULL;
-    if( uMsg == WM_NCCREATE ) {
-        LPCREATESTRUCT lpcs = reinterpret_cast<LPCREATESTRUCT>(lParam);
-        pThis = static_cast<CWindowWnd*>(lpcs->lpCreateParams);
-        pThis->m_hWnd = hWnd;
-        ::SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LPARAM>(pThis));
-    } 
-    else {
-        pThis = reinterpret_cast<CWindowWnd*>(::GetWindowLongPtr(hWnd, GWLP_USERDATA));
-        if( uMsg == WM_NCDESTROY && pThis != NULL ) {
-            LRESULT lRes = ::CallWindowProc(pThis->m_OldWndProc, hWnd, uMsg, wParam, lParam);
-            ::SetWindowLongPtr(pThis->m_hWnd, GWLP_USERDATA, 0L);
-            if( pThis->m_bSubclassed ) pThis->Unsubclass();
-            pThis->m_hWnd = NULL;
-            pThis->OnFinalMessage(hWnd);
-            return lRes;
-        }
-    }
-    if( pThis != NULL ) {
-        return pThis->HandleMessage(uMsg, wParam, lParam);
-    } 
-    else {
-        return ::DefWindowProc(hWnd, uMsg, wParam, lParam);
-    }
-}
+	LRESULT CALLBACK CWindowWnd::__WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+	{
+		CWindowWnd* pThis = NULL;
+		if (uMsg == WM_NCCREATE) {
+			LPCREATESTRUCT lpcs = reinterpret_cast<LPCREATESTRUCT>(lParam);
+			pThis = static_cast<CWindowWnd*>(lpcs->lpCreateParams);
+			pThis->m_hWnd = hWnd;
+			::SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LPARAM>(pThis));
+		}
+		else {
+			pThis = reinterpret_cast<CWindowWnd*>(::GetWindowLongPtr(hWnd, GWLP_USERDATA));
+			if (uMsg == WM_NCDESTROY && pThis != NULL) {
+				LRESULT lRes = ::CallWindowProc(pThis->m_OldWndProc, hWnd, uMsg, wParam, lParam);
+				::SetWindowLongPtr(pThis->m_hWnd, GWLP_USERDATA, 0L);
+				if (pThis->m_bSubclassed) pThis->Unsubclass();
+				pThis->m_hWnd = NULL;
+				pThis->OnFinalMessage(hWnd);
+				return lRes;
+			}
+		}
+		if (pThis != NULL) {
+			return pThis->HandleMessage(uMsg, wParam, lParam);
+		}
+		else {
+			return ::DefWindowProc(hWnd, uMsg, wParam, lParam);
+		}
+	}
 
 LRESULT CALLBACK CWindowWnd::__ControlProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
