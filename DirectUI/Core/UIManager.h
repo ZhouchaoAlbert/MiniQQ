@@ -89,15 +89,16 @@ typedef enum EVENTTYPE_UI
 // to the control implementation.
 typedef struct tagTEventUI
 {
-    int Type;
-    CControlUI* pSender;
-    DWORD dwTimestamp;
-    POINT ptMouse;
-    TCHAR chKey;
-    WORD wKeyState;
-    WPARAM wParam;
-    LPARAM lParam;
+    int Type;              //消息类型
+    CControlUI* pSender;   //发送消息者 
+    DWORD dwTimestamp;     //时间戳
+    POINT ptMouse;         //如果是单双击事件，则传递点击的鼠标位置 
+    TCHAR chKey;           //如果是按键消息，则传递按下的是哪个键    
+    WORD wKeyState;        //键状态 
+    WPARAM wParam;         //WPARAM 
+    LPARAM lParam;         //LPARAM  
 } TEventUI;
+
 
 // Structure for relative position to the parent
 typedef struct tagTRelativePosUI

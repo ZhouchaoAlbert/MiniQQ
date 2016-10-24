@@ -66,23 +66,9 @@ void CLoginFrame::Notify(TNotifyUI& msg)
 		{
 			SendMessage(WM_SYSCOMMAND, SC_MINIMIZE, 0);
 		}
-		else if (szName == _T("btn_agent"))
+		else if (szName == _T("btn_login"))
 		{
-			if (m_HorIp->IsVisible())
-			{
-				m_HorIp->SetVisible(false);
-				m_PaintManager.SetMinInfo(292, 515);
-				m_PaintManager.SetMaxInfo(0, 0);
-				::SetWindowPos(m_hWnd, NULL, 0, 0, 292, 515, SWP_NOZORDER | SWP_NOMOVE | SWP_NOACTIVATE);
-			}
-			else
-			{
-				m_HorIp->SetVisible(true);
-				m_PaintManager.SetMinInfo(292, 615);
-				m_PaintManager.SetMaxInfo(0, 0);
-				::SetWindowPos(m_hWnd, NULL, 0, 0, 292, 615, SWP_NOZORDER | SWP_NOMOVE | SWP_NOACTIVATE);
-			}
-	
+			Close(IDOK);
 		}
 	}
 

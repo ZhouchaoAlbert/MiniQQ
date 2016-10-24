@@ -673,7 +673,7 @@ namespace DuiLib
 		if( (uFlags & UIFIND_VISIBLE) != 0 && !IsVisible() ) return NULL;
 		if( (uFlags & UIFIND_ENABLED) != 0 && !IsEnabled() ) return NULL;
 		if( (uFlags & UIFIND_HITTEST) != 0 ) {
-			if( !::PtInRect(&m_rcItem, *(static_cast<LPPOINT>(pData))) ) return NULL;
+			if( !::PtInRect(&m_rcItem, *(static_cast<LPPOINT>(pData))) ) return NULL;  ///如果不在当前容器内，则直接返回NULL
 			if( !m_bMouseChildEnabled ) {
 				CControlUI* pResult = NULL;
 				if( m_pVerticalScrollBar != NULL ) pResult = m_pVerticalScrollBar->FindControl(Proc, pData, uFlags);

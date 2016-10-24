@@ -1143,7 +1143,7 @@ bool CPaintManagerUI::MessageHandler(UINT uMsg, WPARAM wParam, LPARAM lParam, LR
             CControlUI* pControl = FindControl(pt);
             if( pControl == NULL ) break;
             if( pControl->GetManager() != this ) break;
-            m_pEventClick = pControl;
+            m_pEventClick = pControl;  //m_pEventClick 变量是为了记录当前获取事件的控件，以便WM_LBUTTONUP中发送事件消息
             pControl->SetFocus();
             SetCapture();
             TEventUI event = { 0 };
@@ -1173,7 +1173,7 @@ bool CPaintManagerUI::MessageHandler(UINT uMsg, WPARAM wParam, LPARAM lParam, LR
             CControlUI* pControl = FindControl(pt);
             if( pControl == NULL ) break;
             if( pControl->GetManager() != this ) break;
-            SetCapture();
+            SetCapture(); //注意，只有在点在控件内的时候才要SetCapture，否则会造成托动窗口时，会无效，  
             TEventUI event = { 0 };
             event.Type = UIEVENT_DBLCLICK;
             event.pSender = pControl;

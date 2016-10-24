@@ -31,7 +31,14 @@
 					<HorizontalLayout inset="4,4,2,4" height="34">
 						<EditCombUI name="login_edt_pwd"  numberonly="true" text="" passwordchar="●" width="180"  maxchar="22" endellipsis="true" textpadding="4,2,4,2" tipvalue="请输入密码" tipvaluecolor="#FFB6B6B6" textcolor="#FF080808" arrowwidth="21" normalarrow="material/keyboard.png" droparrow="material/up.png"/>
 					</HorizontalLayout>
+					<HorizontalLayout  height="30">
+					<Control />
+					<Button name="btn_login" text="登  录" width="150" height="30" normalimage="material/login_btn_normal.png" hotimage="material/login_btn_focus.png" pushedimage="material/login_btn_down.png"/>
+					<Control />
+					</HorizontalLayout>
+					
 				</VerticalLayout>
+				
 			</HorizontalLayout>
 			
 		</VerticalLayout>
