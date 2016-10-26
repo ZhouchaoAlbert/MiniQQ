@@ -18,8 +18,11 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*l
 	CString s = Util::Path::GetResFolder();
 	CPaintManagerUI::SetResourcePath(s);
 
-	Aux::MainUI::LoginFrame();
-
+	if (FALSE != Aux::MainUI::LoginFrame())
+	{
+		Aux::MainUI::ShowMain();
+	}
+	
 	CPaintManagerUI::MessageLoop();
 
 	::CoUninitialize();

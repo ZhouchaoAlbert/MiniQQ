@@ -3,51 +3,85 @@
     <Font name="微软雅黑" size="12" bold="false" italic="false" />
     <Font name="微软雅黑" size="12" bold="true" italic="false" />
     <!--Include source="ScrollBar\scrollbar1.xml" /-->
-    <VerticalLayout height="670" bkimage="file=&apos;skin.png&apos; source=&apos;0,0,285,670&apos; corner=&apos;285,280,0,0&apos;">
+    <VerticalLayout height="670" bkimage="file=&apos;material/MainFrame/skin.png&apos; source=&apos;0,0,285,670&apos; corner=&apos;285,280,0,0&apos;">
         <HorizontalLayout height="25">
-            <HorizontalLayout width="60">
-                <Control float="true" pos="10,5,0,0" width="42" height="18" bkimage="QQlogo.png" />
+            <HorizontalLayout width="60" inset= "10,5,0,0" >
+                <Control width="42" height="18" bkimage="material/MainFrame/QQlogo.png" />
             </HorizontalLayout>
-            <HorizontalLayout height="25" />
+            <Control />
             <HorizontalLayout width="100" height="25">
-                <Button name="BTN_CLOSE" float="true" pos="75,0,0,0" width="25" height="25" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;btn_close_normal.png&apos; source=&apos;0,1,25,26&apos;" hotimage="file=&apos;btn_close_hover.png&apos; source=&apos;0,1,25,26&apos;" pushedimage="file=&apos;btn_close_down.png&apos; source=&apos;0,1,25,26&apos;" />
-                <Button name="BTN_MIN"  float="true" pos="50,0,0,0" width="25" height="25" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="btn_mini_normal.png" hotimage="file=&apos;btn_mini_hover.png&apos; source=&apos;0,1,25,26&apos;" pushedimage="file=&apos;btn_mini_down.png&apos; source=&apos;0,1,25,26&apos;" />
-                <Button float="true" pos="25,0,0,0" width="25" height="25" bkimage="file=&apos;AccProt_normal.png&apos; dest=&apos;6,4,19,18&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" hotimage="btn_AccProt_hover.png" pushedimage="file=&apos;btn_AccProt_down.png&apos; source=&apos;0,1,25,26&apos;" />
-                <Button float="true" pos="0,0,0,0" width="25" height="25" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;btn_MedalWal.png&apos; dest=&apos;4,1,24,21&apos;" hotimage="file=&apos;btn_MedalWal.png&apos; dest=&apos;4,1,24,21&apos;" pushedimage="file=&apos;btn_MedalWal.png&apos; dest=&apos;5,2,25,22&apos;" />
+                <Button width="25"  normalimage="file='material/MainFrame/btn_MedalWal.png' dest='4,1,24,21'" hotimage="file='material/MainFrame/btn_MedalWal.png' dest='4,1,24,21'" pushedimage="file='material/MainFrame/btn_MedalWal.png' dest='5,2,25,22'" />
+				<Button width="25"  bkimage="file='material/MainFrame/AccProt_normal.png' dest='6,4,19,18'" hotimage="material/MainFrame/btn_AccProt_hover.png" pushedimage="material/MainFrame/btn_AccProt_down.png" />
+				<Button name="btn_min"  width="25"  normalimage="material/MainFrame/btn_mini_normal.png" hotimage="material/MainFrame/btn_mini_hover.png" pushedimage="material/MainFrame/btn_mini_down.png" />
+				<Button name="btn_close" width="25" normalimage="material/MainFrame/btn_close_normal.png" hotimage="material/MainFrame/btn_close_hover.png" pushedimage="material/MainFrame/btn_close_down.png" />
             </HorizontalLayout>
         </HorizontalLayout>
-        <HorizontalLayout height="88">
-            <VerticalLayout width="75" height="88">
-                <Button float="true" pos="10,18,0,0" width="66" height="66" bkimage="file=&apos;user.png&apos; dest=&apos;3,3,63,63&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;Padding4Normal.png&apos; corner=&apos;5,5,5,5&apos; fade=&apos;200&apos;" hotimage="file=&apos;Padding4Hot.png&apos; corner=&apos;5,5,5,5&apos;" pushedimage="file=&apos;Padding4Hot.png&apos; corner=&apos;5,5,5,5&apos;" />
+		
+		
+		<HorizontalLayout height="88">
+            <VerticalLayout width="75" height="88" inset="10,18,0,0">
+                <Button width="66" height="66" bkimage="file='material/MainFrame/user.png' dest='3,3,63,63' corner='5,5,5,5'"   normalimage="file='material/MainFrame/Padding4Normal.png' corner='5,5,5,5' fade='200'" hotimage="file='material/MainFrame/Padding4Hot.png' corner='5,5,5,5'" pushedimage="file='material/MainFrame/Padding4Hot.png' corner='5,5,5,5'" />
             </VerticalLayout>
-            <VerticalLayout height="88">
+			
+			<VerticalLayout height="88">
                 <VerticalLayout>
-                    <VerticalLayout width="153">
-                        <Label text="sunsmile" float="true" pos="6,16,0,0" width="60" height="20" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" font="1" />
-                        <Label text="编辑个性签名" float="true" pos="6,37,0,0" width="140" height="20" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" font="0" />
-						<Button name="BTN_STATUS" float="true" pos="85,13,0,0" width="32" height="22" bkimage="file=&apos;Menu\Status\imonline.png&apos; dest=&apos;4,4,17,17&apos;" textpadding="16,0,0,0" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" font="0" align="center" normalimage="file=&apos;Menu\Status\imonline.png&apos; dest=&apos;4,4,17,17&apos;" hotimage="file=&apos;allbtn_highlight.png.png&apos; corner=&apos;5,5,5,5&apos;" pushedimage="allbtn_down.png.png" />
+                    <VerticalLayout width="153" inset ="6,16,0,0">
+                        <Label text="qqname"  width="60" height="20" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" font="1" />
+                        <Label text="编辑个性签名"  width="140" height="20" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" font="0" />
+						<Button name="btn_status" float="true" pos="85,13,0,0" width="32" height="22" bkimage="file='material/MainFrame/imonline.png' dest='4,4,17,17'"   hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
                     </VerticalLayout>
                     <HorizontalLayout height="30">
-                        <Button float="true" pos="5,5,0,0" width="20" height="20" bkimage="file=&apos;qzone16_main.png&apos; dest=&apos;2,2,18,18&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;qzone16_main.png&apos; dest=&apos;2,2,18,18&apos;" hotimage="allbtn_highlight.png.png" pushedimage="allbtn_down.png.png" />
-                        <Button float="true" pos="25,5,0,0" width="20" height="20" bkimage="file=&apos;FastTips_News.png&apos; dest=&apos;2,2,18,18&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;FastTips_News.png&apos; dest=&apos;2,2,18,18&apos;" hotimage="allbtn_highlight.png.png" pushedimage="allbtn_down.png.png" />
-                        <Button float="true" pos="45,5,0,0" width="20" height="20" bkimage="file=&apos;mail16.png&apos; dest=&apos;2,2,18,18&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;mail16.png&apos; dest=&apos;2,2,18,18&apos;" hotimage="allbtn_highlight.png.png" pushedimage="allbtn_down.png.png" />
-                        <Button float="true" pos="105,5,0,0" width="20" height="20" bkimage="file=&apos;DianPing16.png&apos; dest=&apos;2,2,18,18&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;DianPing16.png&apos; dest=&apos;2,2,18,18&apos;" hotimage="allbtn_highlight.png.png" pushedimage="allbtn_down.png.png" />
-                        <Button float="true" pos="85,5,0,0" width="20" height="20" bkimage="file=&apos;supervip_icon.png&apos; dest=&apos;2,2,18,18&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;supervip_icon.png&apos; dest=&apos;2,2,18,18&apos;" hotimage="allbtn_highlight.png.png" pushedimage="allbtn_down.png.png" />
-                        <Button float="true" pos="65,5,0,0" width="20" height="20" bkimage="file=&apos;PaiPai_MainService.png&apos; dest=&apos;2,2,18,18&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;PaiPai_MainService.png&apos; dest=&apos;2,2,18,18&apos;" hotimage="allbtn_highlight.png.png" pushedimage="allbtn_down.png.png" />
+                        <Button float="true" pos="5,5,0,0" width="20" height="20" bkimage="file='material/MainFrame/qzone16_main.png' dest='2,2,18,18'"  hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
+                        <Button float="true" pos="25,5,0,0" width="20" height="20" bkimage="file='material/MainFrame/FastTips_News.png'  dest='2,2,18,18'" hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
+                        <Button float="true" pos="45,5,0,0" width="20" height="20" bkimage="file='material/MainFrame/mail16.png' dest='2,2,18,18'" hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
+                        <Button float="true" pos="105,5,0,0" width="20" height="20" bkimage="file='material/MainFrame/DianPing16.png' dest='2,2,18,18'" hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
+                        <Button float="true" pos="85,5,0,0" width="20" height="20" bkimage="file='material/MainFrame/supervip_icon.png' dest='2,2,18,18'" hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
+                        <Button float="true" pos="65,5,0,0" width="20" height="20" bkimage="file='material/MainFrame/PaiPai_MainService.png' dest='2,2,18,18'"  hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
                     </HorizontalLayout>
                 </VerticalLayout>
             </VerticalLayout>
             <VerticalLayout width="56">
-                <Button float="true" pos="3,63,0,0" width="20" height="20" bkimage="file=&apos;btn_Skin_normal.png&apos; dest=&apos;2,2,18,18&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;btn_Skin_normal.png&apos; dest=&apos;2,2,18,18&apos;" hotimage="allbtn_highlight.png.png" pushedimage="allbtn_down.png.png" />
-                <Button text="5" float="true" pos="23,63,0,0" width="30" height="20" bkimage="file=&apos;Messagebox16.png&apos; dest=&apos;2,2,18,18&apos;" textpadding="16,0,0,0" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" font="0" align="center" normalimage="file=&apos;Messagebox16.png&apos; dest=&apos;2,2,18,18&apos;" hotimage="allbtn_highlight.png.png" pushedimage="allbtn_down.png.png" />
-            </VerticalLayout>
+                <Button float="true" pos="3,63,0,0" width="20" height="20" bkimage="file='material/MainFrame/btn_Skin_normal.png' dest='2,2,18,18'" hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
+                <Button text="5"  textpadding="16,0,0,0" textcolor="#00FFFFFF" disabledtextcolor="#FFA7A6AA" font="0" float="true" pos="23,63,0,0" width="30" height="20" bkimage="file='material/MainFrame/Messagebox16.png' dest='2,2,18,18'"  hotimage="file='material/MainFrame/allbtn_highlight.png.png'" pushedimage="file='material/MainFrame/allbtn_down.png.png'" />
+            </VerticalLayout> 
         </HorizontalLayout>
-        <HorizontalLayout height="30" bkimage="file=&apos;main_search_bkg.png&apos; corner=&apos;5,5,5,5&apos;">
+        
+		
+		<HorizontalLayout height="30" bkimage="file='material/MainFrame/main_search_bkg.png' corner='5,5,5,5'">
             <HorizontalLayout height="30">
-                <Edit tiptext="搜索：联系人、讨论组、群、企业" height="30" textpadding="10,3,4,3" tiptextcolor="#00FFFFFF" bkcolor="#00000000" disabledtextcolor="#FFA7A6AA" font="0" />
+                <Edit tipvalue="搜索：联系人、讨论组、群、企业" height="30" textpadding="10,3,4,3" tiptextcolor="#00FFFFFF" bkcolor="#00000000" disabledtextcolor="#FFA7A6AA" font="0" />
             </HorizontalLayout>
-            <Container width="30" height="30" bkimage="file=&apos;searchButton.png&apos; dest=&apos;5,5,25,25&apos;" />
+            <Container width="30" height="30" bkimage="file='material/MainFrame/searchButton.png' dest='5,5,25,25'" />
         </HorizontalLayout>
+		
+		   <Control />
+		 <VerticalLayout width="283" height="60" bkimage="file='material/MainFrame/main_tabctrl_background.png' source='1,1,11,16' corner='2,2,2,2' fade='220'">
+            <Button float="true" pos="6,6,0,0" width="22" height="22" bkimage="file='material/MainFrame/app_icon_16 (3).png' dest='1,1,21,21'"  normalimage="file='material/MainFrame/app_icon_16 (3).png' dest='1,1,21,21'" hotimage="material/MainFrame/allbtn_highlight.png.png" pushedimage="material/MainFrame/allbtn_down.png.png" />
+            <Button float="true" pos="32,6,0,0" width="22" height="22" bkimage="file='material/MainFrame/app_icon_16.png' dest='1,1,21,21'"  normalimage="file='material/MainFrame/app_icon_16.png' dest='1,1,21,21'" hotimage="material/MainFrame/allbtn_highlight.png.png" pushedimage="material/MainFrame/allbtn_down.png.png" />
+            <Button float="true" pos="86,6,0,0" width="22" height="22" bkimage="file='material/MainFrame/app_icon_16 (4).png' dest='1,1,21,21'"  normalimage="file='material/MainFrame/app_icon_16 (4).png' dest='1,1,21,21'" hotimage="material/MainFrame/allbtn_highlight.png.png" pushedimage="material/MainFrame/allbtn_down.png.png" />
+            <Button float="true" pos="59,6,0,0" width="22" height="22" bkimage="file='material/MainFrame/app_icon_16 (2).png' dest='1,1,21,21'"  normalimage="file='material/MainFrame/app_icon_16 (2).png' dest='1,1,21,21'" hotimage="material/MainFrame/allbtn_highlight.png.png" pushedimage="material/MainFrame/allbtn_down.png.png" />
+            <Button float="true" pos="113,6,0,0" width="22" height="22" bkimage="file='material/MainFrame/app_icon_16 (5).png' dest='1,1,21,21'"  normalimage="file='material/MainFrame/app_icon_16 (5).png' dest='1,1,21,21'" hotimage="material/MainFrame/allbtn_highlight.png.png" pushedimage="material/MainFrame/allbtn_down.png.png" />
+           
+		   <Button float="true" pos="5,34,0,0" width="24" height="24" bkimage="material/MainFrame/menu_btn_normal.png"  normalimage="material/MainFrame/menu_btn_normal.png" hotimage="material/MainFrame/menu_btn_highlight.png" pushedimage="material/MainFrame/menu_btn_down.png" />
+            <Button float="true" pos="35,34,0,0" width="24" height="24" bkimage="material/MainFrame/Tools.png"   normalimage="material/MainFrame/Tools.png" hotimage="material/MainFrame/tools_hover.png" pushedimage="material/MainFrame/tools_down.png" />
+            <Button float="true" pos="95,34,0,0" width="24" height="24" bkimage="material/MainFrame/filemanager.png"  normalimage="material/MainFrame/filemanager.png" hotimage="material/MainFrame/filemanager_hover.png" pushedimage="material/MainFrame/filemanager_down.png" />
+            <Button float="true" pos="65,34,0,0" width="24" height="24" bkimage="material/MainFrame/message.png"  normalimage="material/MainFrame/message.png" hotimage="material/MainFrame/message_highlight.png" pushedimage="material/MainFrame/message_down.png" />
+            <Button text="查找" textpadding="24,0,0,5" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="0" align="center" float="true" pos="158,34,0,0" width="50" height="24" bkimage="file='material/MainFrame/find.png' dest='0,0,24,24'" textpadding="24,0,0,5" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="0" align="center" normalimage="file='material/MainFrame/find.png' dest='0,0,24,24'" hotimage="file='material/MainFrame/find_hover.png' dest='0,0,24,24'" pushedimage="file='material/MainFrame/find_down.png' dest='0,0,24,24'" />
+            <Button float="true" pos="125,34,0,0" width="24" height="24" bkimage="material/MainFrame/myCollection_mainpanel.png"  normalimage="material/MainFrame/myCollection_mainpanel.png" hotimage="material/MainFrame/myCollection_mainpanel_hover.png" pushedimage="material/MainFrame/myCollection_mainpanel_down.png" />
+        </VerticalLayout>
+    </VerticalLayout>
+</Window>
+
+<!--
+
+
+
+ 
+			
+			
+			
+		
+  
   
       <Control />
         <VerticalLayout width="283" height="60" bkimage="file=&apos;main_tabctrl_background.png&apos; source=&apos;1,1,11,16&apos; corner=&apos;2,2,2,2&apos; fade=&apos;220&apos;">
@@ -63,5 +97,10 @@
             <Button text="查找" float="true" pos="158,34,0,0" width="50" height="24" bkimage="file=&apos;find.png&apos; dest=&apos;0,0,24,24&apos;" textpadding="24,0,0,5" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="0" align="center" normalimage="file=&apos;find.png&apos; dest=&apos;0,0,24,24&apos;" hotimage="file=&apos;find_hover.png&apos; dest=&apos;0,0,24,24&apos;" pushedimage="file=&apos;find_down.png&apos; dest=&apos;0,0,24,24&apos;" />
             <Button float="true" pos="125,34,0,0" width="24" height="24" bkimage="myCollection_mainpanel.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="myCollection_mainpanel.png" hotimage="filemanager_hover.png" pushedimage="filemanager_down.png" />
         </VerticalLayout>
-    </VerticalLayout>
-</Window>
+
+
+
+
+
+
+-->

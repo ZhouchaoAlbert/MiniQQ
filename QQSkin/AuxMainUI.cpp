@@ -1,19 +1,27 @@
 #include "AuxMainUI.h"
 #include "LoginFrame.h"
 #include "Singleton.h"
+#include "MainFrame.h"
 
 BOOL Aux::MainUI::LoginFrame()
 {
-	CLoginFrame*	pLoginFrm = &Singleton<CLoginFrame>::Instance();
-	pLoginFrm->Create(NULL, _T("MiniQQ"), WS_POPUPWINDOW, 0, 0, 0, 0, 0);
-	pLoginFrm->CenterWindow();
-	UINT32 uRet = pLoginFrm->ShowModal();
+	CLoginFrame*	pLoginFrame = &Singleton<CLoginFrame>::Instance();
+	pLoginFrame->Create(NULL, _T("MiniQQ"), WS_POPUPWINDOW, 0, 0, 0, 0, 0);
+	pLoginFrame->CenterWindow();
+	UINT32 uRet = pLoginFrame->ShowModal();
 	if (uRet == IDOK)
 	{
-		UINT32 i = 0;
+		Singleton<CLoginFrame>::UnInstance();
+		return TRUE;
 	}
-// 	UINT32 uRet = pLoginFrm->GetReturn();
-// 	Singleton<DuiLib::CLoginFrame>::UnInstance();
-// 	return (uRet == IDOK);
-	return TRUE;
+	return FALSE;
+}
+
+
+void Aux::MainUI::ShowMain()
+{
+	CMainFrame* pMainFrame = &Singleton<CMainFrame>::Instance();
+	pMainFrame->Create(NULL, _T("MinQQ"), WS_OVERLAPPEDWINDOW, 0, 0, 0, 0, 0);
+	pMainFrame->CenterWindow();
+	pMainFrame->ShowWindow(true, true);
 }

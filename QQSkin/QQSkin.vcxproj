@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="AuxMainUI.cpp" />
     <ClCompile Include="LoginFrame.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="UIEditComb.cpp" />
     <ClCompile Include="UIHeadIcon.cpp" />
     <ClCompile Include="UIIPAddress.cpp" />
@@ -99,6 +100,7 @@
     <ClInclude Include="..\Include\UtilPath.h" />
     <ClInclude Include="..\Include\UtilString.h" />
     <ClInclude Include="LoginFrame.h" />
+    <ClInclude Include="MainFrame.h" />
     <ClInclude Include="UIEditComb.h" />
     <ClInclude Include="UIHeadIcon.h" />
     <ClInclude Include="UIIPAddress.h" />

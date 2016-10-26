@@ -6,6 +6,7 @@ namespace Aux
 	namespace MainUI
 	{
 		COMMON_API BOOL LoginFrame();
+		COMMON_API void ShowMain();
 	}
 }
 
