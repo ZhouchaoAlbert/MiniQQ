@@ -86,6 +86,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AuxMainUI.cpp" />
+    <ClCompile Include="Event\EventMgr.cpp" />
     <ClCompile Include="LoginFrame.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="UIEditComb.cpp" />
@@ -96,9 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\AuxMainUI.h" />
+    <ClInclude Include="..\Include\EventApi.h" />
+    <ClInclude Include="..\Include\EventDefine.h" />
     <ClInclude Include="..\Include\Singleton.h" />
     <ClInclude Include="..\Include\UtilPath.h" />
     <ClInclude Include="..\Include\UtilString.h" />
+    <ClInclude Include="Event\EventMgr.h" />
     <ClInclude Include="LoginFrame.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="UIEditComb.h" />
