@@ -1,9 +1,3 @@
-//
-// singleton.h
-//
-//  Created on: 2016-05-05
-//      Author: zjg
-//
 
 #ifndef SINGLETON_H_
 #define SINGLETON_H_
