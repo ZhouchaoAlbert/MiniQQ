@@ -16,15 +16,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\Path">
+      <UniqueIdentifier>{6feefabd-6e0d-4291-83e2-d78f1946efea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Str">
+      <UniqueIdentifier>{800517d2-2ced-4353-ae1c-b3220f8fee41}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp">
       <Filter>头文件\Buf</Filter>
     </ClCompile>
+    <ClCompile Include="ByteIOS.cpp">
+      <Filter>头文件\Buf</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilPath.cpp">
+      <Filter>头文件\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilString.cpp">
+      <Filter>头文件\Str</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h">
       <Filter>头文件\Buf</Filter>
+    </ClInclude>
+    <ClInclude Include="ByteIOS.h">
+      <Filter>头文件\Buf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UtilPath.h">
+      <Filter>头文件\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UtilString.h">
+      <Filter>头文件\Str</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -61,7 +61,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>DuiLibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>DuiLibD.lib;BaselibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ProgramDatabaseFile>..\Output\PdbD\$(TargetName).pdb</ProgramDatabaseFile>
       <ImportLibrary>..\Lib\$(TargetName).lib</ImportLibrary>
     </Link>
@@ -82,27 +82,20 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Baselib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AuxMainUI.cpp" />
-    <ClCompile Include="Event\EventMgr.cpp" />
     <ClCompile Include="LoginFrame.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="UIEditComb.cpp" />
     <ClCompile Include="UIHeadIcon.cpp" />
     <ClCompile Include="UIIPAddress.cpp" />
-    <ClCompile Include="UtilPath.cpp" />
-    <ClCompile Include="UtilString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\AuxMainUI.h" />
-    <ClInclude Include="..\Include\EventApi.h" />
-    <ClInclude Include="..\Include\EventDefine.h" />
     <ClInclude Include="..\Include\Singleton.h" />
-    <ClInclude Include="..\Include\UtilPath.h" />
-    <ClInclude Include="..\Include\UtilString.h" />
-    <ClInclude Include="Event\EventMgr.h" />
     <ClInclude Include="LoginFrame.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="UIEditComb.h" />

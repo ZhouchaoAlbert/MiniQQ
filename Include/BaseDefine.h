@@ -31,10 +31,10 @@ using namespace std;
 
 
 //compile micro 
-#ifndef BASE_API_OPTION		//外部使用者请定义，不可重入
-#define BASE_API __declspec(dllexport)
+#ifndef BASELIB_API_OPTION		//外部使用者请定义，不可重入
+#define BASELIB_API __declspec(dllexport)
 #else
-#define BASE_API __declspec(dllimport)
+#define BASELIB_API __declspec(dllimport)
 #endif
 
 #ifndef SKIN_API_OPTION		//外部使用者请定义，不可重入

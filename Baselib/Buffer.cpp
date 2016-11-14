@@ -1,7 +1,7 @@
 #include "Buffer.h"
 
 
-CBuffer::CBuffer():
+Util::Buf::CBuffer::CBuffer():
 m_alloc(0),
 m_buf(NULL),
 m_len(0),
@@ -10,7 +10,8 @@ m_resize(FALSE)
 }
 
 
-CBuffer::~CBuffer()
+
+Util::Buf::CBuffer::~CBuffer()
 {
 	if (m_buf)
 	{
@@ -22,7 +23,8 @@ CBuffer::~CBuffer()
 	}
 }
 
-CBuffer::CBuffer(const CBuffer& obj):
+
+Util::Buf::CBuffer::CBuffer(const CBuffer& obj) :
 m_alloc(0),
 m_buf(NULL),
 m_len(0),
@@ -38,7 +40,8 @@ m_resize(FALSE)
 	}
 }
 
-CBuffer& CBuffer::operator = (const CBuffer& obj)
+
+Util::Buf::CBuffer& Util::Buf::CBuffer::operator = (const CBuffer& obj)
 {
 	if (this != &obj)
 	{
@@ -62,7 +65,7 @@ CBuffer& CBuffer::operator = (const CBuffer& obj)
 }
 
 
-BOOL CBuffer::Append(UINT8* buf, UINT16 len)
+BOOL Util::Buf::CBuffer::Append(UINT8* buf, UINT16 len)
 {
 	if (NULL == buf && 0 == len)
 	{
@@ -87,7 +90,7 @@ BOOL CBuffer::Append(UINT8* buf, UINT16 len)
 	return TRUE;
 }
 
-void CBuffer::EraseLeft(UINT16 len)
+void Util::Buf::CBuffer::EraseLeft(UINT16 len)
 {
 	if (len > m_len)
 	{
@@ -99,7 +102,7 @@ void CBuffer::EraseLeft(UINT16 len)
 	}
 }
 
-void CBuffer::EraseRight(UINT16 len)
+void Util::Buf::CBuffer::EraseRight(UINT16 len)
 {
 	if (len > m_len)
 	{

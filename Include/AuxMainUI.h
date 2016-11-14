@@ -5,8 +5,8 @@ namespace Aux
 {
 	namespace MainUI
 	{
-		COMMON_API BOOL LoginFrame();
-		COMMON_API void ShowMain();
+		SKIN_API BOOL LoginFrame();
+		SKIN_API void ShowMain();
 	}
 }
 

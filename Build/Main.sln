@@ -13,8 +13,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DuiLib", "..\DirectUI\DuiLi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QQSkin", "..\QQSkin\QQSkin.vcxproj", "{F222EDA9-1CB1-46CC-B0A2-F14B6A360F1F}"
 	ProjectSection(ProjectDependencies) = postProject
+		{58CE0806-C972-4DC1-B2B8-F529283F2337} = {58CE0806-C972-4DC1-B2B8-F529283F2337}
 		{E106ACD7-4E53-4AEE-942B-D0DD426DB34E} = {E106ACD7-4E53-4AEE-942B-D0DD426DB34E}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Baselib", "..\Baselib\Baselib.vcxproj", "{58CE0806-C972-4DC1-B2B8-F529283F2337}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +37,10 @@ Global
 		{F222EDA9-1CB1-46CC-B0A2-F14B6A360F1F}.Debug|Win32.Build.0 = Debug|Win32
 		{F222EDA9-1CB1-46CC-B0A2-F14B6A360F1F}.Release|Win32.ActiveCfg = Release|Win32
 		{F222EDA9-1CB1-46CC-B0A2-F14B6A360F1F}.Release|Win32.Build.0 = Release|Win32
+		{58CE0806-C972-4DC1-B2B8-F529283F2337}.Debug|Win32.ActiveCfg = Debug|Win32
+		{58CE0806-C972-4DC1-B2B8-F529283F2337}.Debug|Win32.Build.0 = Debug|Win32
+		{58CE0806-C972-4DC1-B2B8-F529283F2337}.Release|Win32.ActiveCfg = Release|Win32
+		{58CE0806-C972-4DC1-B2B8-F529283F2337}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
