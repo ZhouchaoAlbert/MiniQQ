@@ -85,7 +85,7 @@ BOOL Util::Buf::CBuffer::Append(UINT8* buf, UINT16 len)
 		}
 		m_buf = temp;
 	}
-	memcpy(m_buf + len, buf, len);
+	memcpy(m_buf + m_len, buf, len);
 	m_len += len;
 	return TRUE;
 }
