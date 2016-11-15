@@ -99,7 +99,6 @@ Util::Buf::CByteIOS& Util::Buf::CByteIOS::Write(UINT8* buf, UINT16 len)
 	{
 		ATLASSERT(FALSE);
 	}
-
 	return *this;
 }
 
@@ -124,7 +123,7 @@ Util::Buf::CByteIOS& Util::Buf::CByteIOS::operator >> (CStringA& outValue)
 	{
 		UINT16 len = m_len - m_rpos + 1;
 		CHAR* buf = new CHAR[len];
-		memset(buf, 0, sizeof(buf));
+		memset(buf, 0, sizeof(CHAR)* len);
 		strcpy_s(buf, len,(CHAR*)(m_buf + m_rpos));
 
 		m_rpos += (strlen(buf) + 1)*sizeof(CHAR);
@@ -140,11 +139,10 @@ Util::Buf::CByteIOS& Util::Buf::CByteIOS::operator >> (CStringW& outValue)
 	{
 		UINT16 len = m_len - m_rpos + 1;
 		WCHAR* buf = new WCHAR[len];
-		memset(buf, 0, sizeof(buf));
-		wcscpy_s(buf, len, (WCHAR*)(m_buf + m_rpos));
-
-		m_rpos += (wcslen(buf) + 1)*sizeof(WCHAR);
-		outValue.Format(_T("%s"), buf);
+		memset(buf, 0, sizeof(WCHAR)* len);
+		wcscpy_s(buf, len, (const WCHAR*)(m_buf + m_rpos));
+		m_rpos += (wcslen(buf) + 1) * sizeof(WCHAR);
+		outValue.Format(L"%s", buf);
 		delete buf;
 	}
 	return *this;

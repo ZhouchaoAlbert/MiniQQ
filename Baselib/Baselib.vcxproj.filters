@@ -38,17 +38,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Buffer.h">
-      <Filter>头文件\Buf</Filter>
-    </ClInclude>
-    <ClInclude Include="ByteIOS.h">
-      <Filter>头文件\Buf</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\UtilPath.h">
       <Filter>头文件\Path</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\UtilString.h">
       <Filter>头文件\Str</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Buffer.h">
+      <Filter>头文件\Buf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ByteIOS.h">
+      <Filter>头文件\Buf</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
