@@ -12,8 +12,6 @@ Util::Msg::CMsgBase::~CMsgBase()
 	Singleton<CMsgObjectMgr>::Instance().UnRegister(this);
 }
 
-
-
 void Util::Msg::CMsgBase::Start()
 {
 	Singleton<CMsgObjectMgr>::Instance().Start(this);

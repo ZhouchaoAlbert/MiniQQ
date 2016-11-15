@@ -14,9 +14,9 @@ public:
 	DECLARE_WND_CLASS(_T("CMsgObjectWindow"))
 	void Destroy();
 public:
-	void   Start();
-	void   Stop();
-	HWND   GetMsgWnd();
+	void Start();
+	void Stop();
+	HWND GetMsgWnd();
 	void AddMsg(UINT32 uMsgID);
 	void DeleteMsg(UINT32 uMsgID);
 
