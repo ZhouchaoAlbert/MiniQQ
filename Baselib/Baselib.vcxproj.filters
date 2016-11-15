@@ -25,6 +25,18 @@
     <Filter Include="头文件\Msg">
       <UniqueIdentifier>{089a8d3e-041f-458c-8a42-591055c7bab1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Invoke">
+      <UniqueIdentifier>{77489931-0614-4b8f-9739-8199d4d581a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Invoke\Event">
+      <UniqueIdentifier>{37562326-4d2c-4a7a-9024-c84711c953d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Invoke\Sink">
+      <UniqueIdentifier>{fc67b81a-920a-40a1-9619-ca42eaad412a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Invoke\PtrArray">
+      <UniqueIdentifier>{d6b7aabe-41b3-41d7-838d-d808d6241ac1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp">
@@ -48,6 +60,12 @@
     <ClCompile Include="UtilMsg.cpp">
       <Filter>头文件\Msg</Filter>
     </ClCompile>
+    <ClCompile Include="HookEvent.cpp">
+      <Filter>头文件\Invoke\Sink</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPtrArray.cpp">
+      <Filter>头文件\Invoke\PtrArray</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilPath.h">
@@ -70,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="..\Include\UtilMsg.h">
       <Filter>头文件\Msg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\EventDefine.h">
+      <Filter>头文件\Invoke</Filter>
+    </ClInclude>
+    <ClInclude Include="HookEvent.h">
+      <Filter>头文件\Invoke\Sink</Filter>
+    </ClInclude>
+    <ClInclude Include="MyPtrArray.h">
+      <Filter>头文件\Invoke\PtrArray</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
