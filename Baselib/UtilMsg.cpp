@@ -36,7 +36,7 @@ void Util::Msg::CMsgBase::DeleteMsg(UINT32 uMsgID)
 
 HWND Util::Msg::CMsgBase::GetMsgWnd()
 {
-	Singleton<CMsgObjectMgr>::Instance().GetMsgWnd(this);
+	return Singleton<CMsgObjectMgr>::Instance().GetMsgWnd(this);
 }
 
 

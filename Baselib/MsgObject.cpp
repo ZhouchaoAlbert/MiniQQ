@@ -30,12 +30,12 @@ HWND CMsgObject::GetMsgWnd()
 	return m_hWnd;
 }
 
-UINT32 CMsgObject::AddMsg(UINT32 uMsgID)
+void CMsgObject::AddMsg(UINT32 uMsgID)
 {
 	m_mapMsgID[uMsgID] = uMsgID;
 }
 
-UINT32 CMsgObject::DeleteMsg(UINT32 uMsgID)
+void CMsgObject::DeleteMsg(UINT32 uMsgID)
 {
 	m_mapMsgID.erase(uMsgID);
 }

@@ -1,7 +1,9 @@
 #pragma once
-#include <map>
+
+#include <BaseDefine.h>
 #include <atlwin.h>
 using namespace ATL;
+#include <map>
 using namespace std;
 
 class CMsgObject : public CWindowImpl<CMsgObject, CWindow, CWinTraits<WS_OVERLAPPEDWINDOW, 0>>
@@ -15,8 +17,9 @@ public:
 	void   Start();
 	void   Stop();
 	HWND   GetMsgWnd();
-	UINT32 AddMsg(UINT32 uMsgID);
-	UINT32 DeleteMsg(UINT32 uMsgID);
+	void AddMsg(UINT32 uMsgID);
+	void DeleteMsg(UINT32 uMsgID);
+
 private:
 	virtual void OnFinalMessage(_In_ HWND /*hWnd*/)
 	{

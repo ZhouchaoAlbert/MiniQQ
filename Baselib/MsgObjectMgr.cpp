@@ -74,8 +74,9 @@ HWND CMsgObjectMgr::GetMsgWnd(CMsgBase* pMsgBase)
 	CMsgObject* pMsgObject = FindMsgBase(pMsgBase);
 	if (pMsgObject)
 	{
-		pMsgObject->GetMsgWnd();
+		return pMsgObject->GetMsgWnd();
 	}
+	return NULL;
 }
 
 CMsgObject* CMsgObjectMgr::FindMsgBase(CMsgBase* pMsgBase)
