@@ -22,6 +22,9 @@
     <Filter Include="头文件\Str">
       <UniqueIdentifier>{800517d2-2ced-4353-ae1c-b3220f8fee41}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Msg">
+      <UniqueIdentifier>{089a8d3e-041f-458c-8a42-591055c7bab1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp">
@@ -36,6 +39,9 @@
     <ClCompile Include="UtilString.cpp">
       <Filter>头文件\Str</Filter>
     </ClCompile>
+    <ClCompile Include="MsgObject.cpp">
+      <Filter>头文件\Msg</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilPath.h">
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\ByteIOS.h">
       <Filter>头文件\Buf</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgObject.h">
+      <Filter>头文件\Msg</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -93,10 +93,12 @@
     <ClInclude Include="..\Include\ByteIOS.h" />
     <ClInclude Include="..\Include\UtilPath.h" />
     <ClInclude Include="..\Include\UtilString.h" />
+    <ClInclude Include="MsgObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="ByteIOS.cpp" />
+    <ClCompile Include="MsgObject.cpp" />
     <ClCompile Include="UtilPath.cpp" />
     <ClCompile Include="UtilString.cpp" />
   </ItemGroup>
