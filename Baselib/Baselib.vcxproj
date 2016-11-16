@@ -102,6 +102,9 @@
     <ClInclude Include="MsgObject.h" />
     <ClInclude Include="MsgObjectMgr.h" />
     <ClInclude Include="MyPtrArray.h" />
+    <ClInclude Include="ThreadObject.h" />
+    <ClInclude Include="ThreadObjMgr.h" />
+    <ClInclude Include="ThreadPoolApi.h" />
     <ClInclude Include="TimeMgr.h" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +114,9 @@
     <ClCompile Include="HookEvent.cpp" />
     <ClCompile Include="KernelObjApi.cpp" />
     <ClCompile Include="MyPtrArray.cpp" />
+    <ClCompile Include="ThreadObject.cpp" />
+    <ClCompile Include="ThreadObjMgr.cpp" />
+    <ClCompile Include="ThreadPoolApi.cpp" />
     <ClCompile Include="TimeMgr.cpp" />
     <ClCompile Include="TimerApi.cpp" />
     <ClCompile Include="UtilMsg.cpp" />
