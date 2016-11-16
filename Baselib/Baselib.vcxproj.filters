@@ -31,9 +31,6 @@
     <Filter Include="头文件\Invoke\Event">
       <UniqueIdentifier>{37562326-4d2c-4a7a-9024-c84711c953d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Invoke\Sink">
-      <UniqueIdentifier>{fc67b81a-920a-40a1-9619-ca42eaad412a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\Invoke\PtrArray">
       <UniqueIdentifier>{d6b7aabe-41b3-41d7-838d-d808d6241ac1}</UniqueIdentifier>
     </Filter>
@@ -66,14 +63,17 @@
     <ClCompile Include="MyPtrArray.cpp">
       <Filter>头文件\Invoke\PtrArray</Filter>
     </ClCompile>
-    <ClCompile Include="BaseSink.cpp">
-      <Filter>头文件\Invoke\Sink</Filter>
-    </ClCompile>
     <ClCompile Include="TimeMgr.cpp">
       <Filter>头文件\Timer</Filter>
     </ClCompile>
     <ClCompile Include="TimerApi.cpp">
       <Filter>头文件\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="HookEvent.cpp">
+      <Filter>头文件\Invoke\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="EventMgr.cpp">
+      <Filter>头文件\Invoke\Event</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,8 +110,11 @@
     <ClInclude Include="..\Include\TimerApi.h">
       <Filter>头文件\Timer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\BaseSink.h">
-      <Filter>头文件\Invoke\Sink</Filter>
+    <ClInclude Include="HookEvent.h">
+      <Filter>头文件\Invoke\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="EventMgr.h">
+      <Filter>头文件\Invoke\Event</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

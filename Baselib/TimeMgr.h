@@ -1,8 +1,9 @@
 #pragma once
 #include <map>
 #include "UtilMsg.h"
-#include "BaseSink.h"
+#include "HookEvent.h"
 using namespace std;
+using namespace Util::Event;
 
 const UINT32 DEFINE_TIME_MSGID = WM_USER + 1005;
 
@@ -12,14 +13,14 @@ public:
 	CTimeMgr();
 	~CTimeMgr();
 
-	void Start(UINT32 uSecond,IBaseSink* pSink);
-	void Stop(IBaseSink* pSink);
-	BOOL IsWork(IBaseSink* pSink);
+	void Start(UINT32 uSecond,IHookEvent* pSink);
+	void Stop(IHookEvent* pSink);
+	BOOL IsWork(IHookEvent* pSink);
 protected:
 	virtual void OnMessage(UINT32 uMsgID, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 private:
 	UINT32 GetTimerID();
-	map<UINT32, IBaseSink*>m_mapForward;
-	map<IBaseSink*, UINT32>m_mapInverte;
+	map<UINT32, IHookEvent*>m_mapForward;
+	map<IHookEvent*, UINT32>m_mapInverte;
 };
 
