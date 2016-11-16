@@ -62,9 +62,13 @@ UINT32 CThreadObjMgr::StartThread(IThreadWork* pIThreadWork, IThreadSink* pIThre
 	return 0;
 }
 
-void   CThreadObjMgr::StopThread(UINT64 uTaskID)
+void   CThreadObjMgr::StopThread(UINT32 uTaskID)
 {
-
+	map<UINT32, ThreadNode>::iterator iter = m_mapWorkNode.find(uTaskID); 
+	if (iter != m_mapWorkNode.end())
+	{
+		iter->second.pThreadObject->Stop();
+	}
 }
 
 

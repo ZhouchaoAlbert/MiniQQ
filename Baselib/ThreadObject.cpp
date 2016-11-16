@@ -25,8 +25,12 @@ void CThreadObject::Start()
 
 void CThreadObject::Stop()
 {
-	m_bExit = TRUE;
-	::SuspendThread(m_handle);
+    if (m_uTaskID)
+    {
+		m_bExit = TRUE;
+		_endthreadex(m_uTaskID);
+		m_uTaskID = 0;
+    }
 }
 
 

@@ -35,7 +35,7 @@ public:
 	~CThreadObjMgr();
 public:
 	UINT32 StartThread(IThreadWork* pIThreadWork, IThreadSink* pIThreadSink, LPVOID plParam);
-	void   StopThread(UINT64 uTaskID);
+	void   StopThread(UINT32 uTaskID);
 
 	BOOL   GetAddTask(UINT32& uTaskID, ThreadNode& node, CThreadObject* pThreadObject);
 	void   OnTaskFinish(UINT32 uTaskID);

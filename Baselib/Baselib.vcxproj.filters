@@ -137,13 +137,13 @@
     <ClInclude Include="..\Include\KernelObjApi.h">
       <Filter>头文件\Lock</Filter>
     </ClInclude>
-    <ClInclude Include="ThreadPoolApi.h">
-      <Filter>头文件\ThreadPool</Filter>
-    </ClInclude>
     <ClInclude Include="ThreadObjMgr.h">
       <Filter>头文件\ThreadPool</Filter>
     </ClInclude>
     <ClInclude Include="ThreadObject.h">
+      <Filter>头文件\ThreadPool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ThreadPoolApi.h">
       <Filter>头文件\ThreadPool</Filter>
     </ClInclude>
   </ItemGroup>
