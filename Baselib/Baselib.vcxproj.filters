@@ -37,6 +37,9 @@
     <Filter Include="头文件\Timer">
       <UniqueIdentifier>{35ef1d13-8517-42cd-912d-da13439d4216}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Lock">
+      <UniqueIdentifier>{904c6917-59fc-43af-9acd-67c8609e4b41}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buffer.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="EventMgr.cpp">
       <Filter>头文件\Invoke\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelObjApi.cpp">
+      <Filter>头文件\Lock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="EventMgr.h">
       <Filter>头文件\Invoke\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\KernelObjApi.h">
+      <Filter>头文件\Lock</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
