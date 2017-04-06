@@ -22,6 +22,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Libcef_2623", "..\Libcef_2623\Libcef_2623.vcxproj", "{B150359A-CEE8-4959-9D87-604C1B738E86}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UISkin", "..\UISkin\UISkin.vcxproj", "{53F56F4C-FDEC-43D6-9B8C-6C4412DA5B51}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E106ACD7-4E53-4AEE-942B-D0DD426DB34E} = {E106ACD7-4E53-4AEE-942B-D0DD426DB34E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
