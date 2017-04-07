@@ -65,7 +65,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Lib\</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>..\Output\PdbD\$(TargetName).pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>QQSkinD.lib;DuilibD.lib;BaselibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>QQSkinD.lib;DuilibD.lib;BaselibD.lib;UISkinD.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\Lib\$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
@@ -85,7 +85,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Baselib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Baselib.lib;UISkin.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

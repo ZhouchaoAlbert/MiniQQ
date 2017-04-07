@@ -4,9 +4,11 @@
 #include "ByteIOS.h"
 using namespace DuiLib;
 
+#include "..\UISkin\SkinApi.h"
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int nCmdShow)
 {
 	
+	InitSkinEngine(NULL, NULL, NULL, NULL, NULL);
 	//test
 	//CString strPath;
 	//strPath = Util::Path::GetAppPath();
