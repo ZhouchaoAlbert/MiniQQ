@@ -65,7 +65,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Lib\</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>..\Output\PdbD\$(TargetName).pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>QQSkinD.lib;DuilibD.lib;BaselibD.lib;UISkinD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>QQSkinD.lib;DuilibD.lib;BaselibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\Lib\$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
@@ -79,13 +79,15 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Include\;..\DirectUI\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Baselib.lib;UISkin.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>QQSkin.lib;Duilib.lib;Baselib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Lib\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
