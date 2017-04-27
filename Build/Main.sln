@@ -36,6 +36,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PipeServer", "..\PipeServer
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Webkit", "..\Webkit\Webkit.vcxproj", "{C14D92D4-2C34-41E4-8B99-FED297E352AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Service", "..\Service\Service.vcxproj", "{2C1D07A2-3128-409C-8504-53A56721EDC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -78,6 +80,10 @@ Global
 		{C14D92D4-2C34-41E4-8B99-FED297E352AB}.Debug|Win32.Build.0 = Debug|Win32
 		{C14D92D4-2C34-41E4-8B99-FED297E352AB}.Release|Win32.ActiveCfg = Release|Win32
 		{C14D92D4-2C34-41E4-8B99-FED297E352AB}.Release|Win32.Build.0 = Release|Win32
+		{2C1D07A2-3128-409C-8504-53A56721EDC7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2C1D07A2-3128-409C-8504-53A56721EDC7}.Debug|Win32.Build.0 = Debug|Win32
+		{2C1D07A2-3128-409C-8504-53A56721EDC7}.Release|Win32.ActiveCfg = Release|Win32
+		{2C1D07A2-3128-409C-8504-53A56721EDC7}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
