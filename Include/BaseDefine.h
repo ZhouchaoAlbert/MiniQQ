@@ -48,3 +48,10 @@ using namespace std;
  #else
  #define UISKIN_API __declspec(dllimport)
  #endif
+
+#ifndef NAMEPIPE_API_OPTION		//外部使用者请定义，不可重入
+#define NAMEPIPE_API __declspec(dllexport)
+#else
+#define NAMEPIPE_API __declspec(dllimport)
+#endif
+

@@ -19,13 +19,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -92,14 +92,15 @@
     <ClInclude Include="..\Include\Buffer.h" />
     <ClInclude Include="..\Include\ByteIOS.h" />
     <ClInclude Include="..\Include\EventDefine.h" />
+    <ClInclude Include="..\Include\HookEvent.h" />
     <ClInclude Include="..\Include\KernelObjApi.h" />
+    <ClInclude Include="..\Include\SinkApi.h" />
     <ClInclude Include="..\Include\ThreadPoolApi.h" />
     <ClInclude Include="..\Include\TimerApi.h" />
     <ClInclude Include="..\Include\UtilMsg.h" />
     <ClInclude Include="..\Include\UtilPath.h" />
     <ClInclude Include="..\Include\UtilString.h" />
     <ClInclude Include="EventMgr.h" />
-    <ClInclude Include="HookEvent.h" />
     <ClInclude Include="MsgObject.h" />
     <ClInclude Include="MsgObjectMgr.h" />
     <ClInclude Include="MyPtrArray.h" />
@@ -114,6 +115,7 @@
     <ClCompile Include="HookEvent.cpp" />
     <ClCompile Include="KernelObjApi.cpp" />
     <ClCompile Include="MyPtrArray.cpp" />
+    <ClCompile Include="SinkApi.cpp" />
     <ClCompile Include="ThreadObject.cpp" />
     <ClCompile Include="ThreadObjMgr.cpp" />
     <ClCompile Include="ThreadPoolApi.cpp" />

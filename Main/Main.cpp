@@ -15,6 +15,10 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*l
 	//Util::Path::GetTempPath();
 	//Util::Path::CreateDirectory(_T("C:\\A\\B\\C\\D\\E"), NULL);
 
+	Util::Buf::CByteIOS buf2;
+
+	CString strTestA = _T("sfvwsggegerhhjjkjl");
+	buf2 << strTestA;
 
 	Util::Buf::CByteIOS buf;
 	UINT32 i = 1;
@@ -33,8 +37,6 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*l
 	CStringW strC, strD;
 	CStringA strCC, strDD;
 	buf >> k >> n >> strC >> strD;
-
-
 
 	CPaintManagerUI::SetInstance(hInstance);
 	CString s = Util::Path::GetResFolder();
