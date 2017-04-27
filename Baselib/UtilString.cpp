@@ -167,3 +167,29 @@ void  Util::String::StringSplit(CString text, CString sp, std::vector<CString>& 
 	}
 	vecSplit.push_back(text);
 }
+
+INT32 Util::String::StrCmp(TCHAR* p1, TCHAR* p2)
+{
+	if (!p1)
+	{
+		if (!p2)
+		{
+			return 0;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+	else
+	{
+		if (!p2)
+		{
+			return -1;
+		}
+		else
+		{
+			return _tcscmp(p1, p2);
+		}
+	}
+}

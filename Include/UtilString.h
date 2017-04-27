@@ -19,7 +19,7 @@ namespace Util
 		//
 		BASELIB_API void  StringSplit(CString text, CString sp, std::vector<CString>& vecSplit);
 
-		
+		BASELIB_API INT32 StrCmp(TCHAR* p1, TCHAR* p2);
 	}
 }
 

@@ -55,3 +55,9 @@ using namespace std;
 #define NAMEPIPE_API __declspec(dllimport)
 #endif
 
+#ifndef SERVICE_API_OPTION		//外部使用者请定义，不可重入
+#define SERVICE_API __declspec(dllexport)
+#else
+#define SERVICE_API __declspec(dllimport)
+#endif
+
