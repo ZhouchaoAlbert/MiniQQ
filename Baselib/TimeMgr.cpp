@@ -11,17 +11,17 @@ CTimeMgr::~CTimeMgr()
 {
 	DeleteMsg(DEFINE_TIME_MSGID);
 
-	map<UINT32, IHookEvent*>m_mapTmp = m_mapForward;
+	map<UINT32, Util::Sink::ISink*>m_mapTmp = m_mapForward;
 	m_mapForward.clear();
 	m_mapInverte.clear();
-	for (map<UINT32, IHookEvent*>::iterator iter = m_mapTmp.begin(); iter != m_mapTmp.end(); iter++)
+	for (map<UINT32, Util::Sink::ISink*>::iterator iter = m_mapTmp.begin(); iter != m_mapTmp.end(); iter++)
 	{
 		KillTimer(GetMsgWnd(), iter->first);
 	}
 }
 
 
-void CTimeMgr::Start(UINT32 uSecond, IHookEvent* pSink)
+void CTimeMgr::Start(UINT32 uSecond, Util::Sink::ISink*  pSink)
 {
 	if (m_mapInverte.find(pSink) !=m_mapInverte.end())
 	{
@@ -39,14 +39,14 @@ void CTimeMgr::Start(UINT32 uSecond, IHookEvent* pSink)
 }
 
 
-void CTimeMgr::Stop(IHookEvent* pSink)
+void CTimeMgr::Stop(Util::Sink::ISink* pSink)
 {
-	map<IHookEvent*, UINT32>::iterator iter = m_mapInverte.find(pSink);
+	map<Util::Sink::ISink*, UINT32>::iterator iter = m_mapInverte.find(pSink);
 	if (iter == m_mapInverte.end())
 	{
 		return;
 	}
-	map<UINT32, IHookEvent*>::iterator iter2 = m_mapForward.find(iter->second);
+	map<UINT32, Util::Sink::ISink*>::iterator iter2 = m_mapForward.find(iter->second);
 	if (iter2 == m_mapForward.end())
 	{
 		m_mapInverte.erase(iter);
@@ -72,18 +72,18 @@ void CTimeMgr::OnMessage(UINT32 uMsgID, WPARAM wParam, LPARAM lParam, BOOL& bHan
 		return;
 	}
 	UINT32 uTimerID = (UINT32)wParam;
-	map<UINT32, IHookEvent*>::iterator iter = m_mapForward.find(uTimerID);
+	map<UINT32, Util::Sink::ISink*>::iterator iter = m_mapForward.find(uTimerID);
 	if (iter != m_mapForward.end() && NULL != iter->second)
 	{
-		iter->second->OnHookEvent(NULL, NULL, NULL);
+		iter->second->OnSink(NULL, NULL, NULL);
 		bHandled = TRUE;
 	}
 }
 
-BOOL CTimeMgr::IsWork(IHookEvent* pSink)
+BOOL CTimeMgr::IsWork(Util::Sink::ISink *pSink)
 {
-	map<IHookEvent*, UINT32>::iterator iter = m_mapInverte.find(pSink);
-	if (iter == m_mapInverte.end())
+	map<Util::Sink::ISink*, UINT32>::iterator iter = m_mapInverte.find(pSink);
+	if (iter != m_mapInverte.end())
 	{
 		return TRUE;
 	}

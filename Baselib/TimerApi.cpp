@@ -8,6 +8,7 @@ CTimerSink::CTimerSink()
 
 CTimerSink::~CTimerSink()
 {
+	Stop();
 }
 
 

@@ -1,8 +1,8 @@
 #pragma once
-#include "HookEvent.h"
-using namespace Util::Event;
+#include "SinkApi.h"
 
-class BASELIB_API CTimerSink  :  public CHookEvent
+
+class BASELIB_API CTimerSink : public Util::Sink::CSinkBase
 {
 public:
 	CTimerSink();
