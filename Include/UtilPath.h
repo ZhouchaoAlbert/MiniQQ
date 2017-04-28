@@ -26,6 +26,8 @@ namespace Util
 		BASELIB_API  CString GetPathRoot(LPCTSTR lpszPath);				  //获取指定路径的根目录信息
 		BASELIB_API  CString GetExtension(LPCTSTR lpszPath);	              //返回指定的路径字符串的扩展名
 		BASELIB_API  CString GetFileNameWithoutExtension(LPCTSTR lpszPath); //返回不具有扩展名的路径字符串的文件名
+
+		BASELIB_API CString GetCefResPath();
 	}
 }
 

@@ -65,7 +65,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Lib\</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>..\Output\PdbD\$(TargetName).pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>QQSkinD.lib;DuilibD.lib;BaselibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>QQSkinD.lib;DuilibD.lib;BaselibD.lib;NamePipeD.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\Lib\$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>

@@ -3,13 +3,14 @@
 
 CTimeMgr::CTimeMgr()
 {
-	AddMsg(DEFINE_TIME_MSGID);
+	AddMsg(WM_TIMER);
+	Util::Msg::CMsgBase::Start();
 }
 
 
 CTimeMgr::~CTimeMgr()
 {
-	DeleteMsg(DEFINE_TIME_MSGID);
+	DeleteMsg(WM_TIMER);
 
 	map<UINT32, Util::Sink::ISink*>m_mapTmp = m_mapForward;
 	m_mapForward.clear();
@@ -66,7 +67,7 @@ void CTimeMgr::Stop(Util::Sink::ISink* pSink)
 
 void CTimeMgr::OnMessage(UINT32 uMsgID, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
-	if (uMsgID != DEFINE_TIME_MSGID)
+	if (WM_TIMER != uMsgID)
 	{
 		ATLASSERT(FALSE);
 		return;

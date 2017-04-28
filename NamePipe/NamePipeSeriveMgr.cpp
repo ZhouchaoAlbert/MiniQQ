@@ -168,10 +168,13 @@ UINT32 WINAPI CNamePipeSeriveMgr::WorkThreadProc(LPVOID pv)
 		}
 		if (WaitFinish(hPipe, tagOver) != 0)
 			return -1;
+		if (tagOver.InternalHigh)
+		{
+			Singleton<CPipeBuffer>::Instance().Append((UINT8*)&szReadBuf, tagOver.InternalHigh);
 
-		Singleton<CPipeBuffer>::Instance().Append((UINT8*)&szReadBuf, tagOver.InternalHigh);
-
-		Singleton<CPackageMgr>::Instance().OnDataCome();
+			Singleton<CPackageMgr>::Instance().OnDataCome();
+		}
+		
 
 		//string strBuf = szReadBuf;
 		//printf("Client Msg: %s\n", strBuf.c_str());

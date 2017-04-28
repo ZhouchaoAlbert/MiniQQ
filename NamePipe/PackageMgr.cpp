@@ -85,6 +85,7 @@ void CPackageMgr::OnDataCome()
 
 void CPackageMgr::OnTimer(void *pParam1, void *pParam2, void *pParam3)
 {
+	return;
 	vector<UINT64> vRetry, vTimeout;
 	for (map<UINT64, C2SNode>::iterator iter = m_mapRequest.begin(); iter != m_mapRequest.end(); iter++)
 	{

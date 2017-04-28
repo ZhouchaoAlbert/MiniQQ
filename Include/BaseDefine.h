@@ -61,3 +61,9 @@ using namespace std;
 #define SERVICE_API __declspec(dllimport)
 #endif
 
+#ifndef WEBKIT_API_OPTION		//外部使用者请定义，不可重入
+#define WEBKIT_API __declspec(dllexport)
+#else
+#define WEBKIT_API __declspec(dllimport)
+#endif
+

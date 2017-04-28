@@ -30,6 +30,9 @@
     <ClInclude Include="ClientHandler.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\WebkitApi.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -46,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="ClientHandler.cpp">
       <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WebkitApi.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

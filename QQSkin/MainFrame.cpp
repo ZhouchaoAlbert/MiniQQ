@@ -39,12 +39,17 @@ void CMainFrame::InitWindow()
 	
 }
 
+#include "AuxBrowser.h"
+
 void CMainFrame::Notify(TNotifyUI& msg)
 {
 	if (msg.sType == DUI_MSGTYPE_CLICK)
 	{
 		CDuiString szName = msg.pSender->GetName();
-	
+		if (szName == _T("Test"))
+		{
+			Aux::Browser::OpenPV();
+		}
 	}
 
 }

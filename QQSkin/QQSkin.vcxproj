@@ -62,7 +62,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>DuiLibD.lib;BaselibD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>DuiLibD.lib;BaselibD.lib;ServiceD.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ProgramDatabaseFile>..\Output\PdbD\$(TargetName).pdb</ProgramDatabaseFile>
       <ImportLibrary>..\Lib\$(TargetName).lib</ImportLibrary>
     </Link>

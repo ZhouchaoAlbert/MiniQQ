@@ -57,6 +57,11 @@ BOOL CMsgObject::ProcessWindowMessage(
 {
 	BOOL bHandled = FALSE;
 	map<UINT32, UINT32>::iterator iter = m_mapMsgID.find(uMsg);
+
+	if (uMsg == WM_TIMER)
+	{
+		UINT32 i = 0;
+	}
 	if (m_bStop && iter != m_mapMsgID.end())  //通知接受的管理类
 	{
 		Singleton<CMsgObjectMgr>::Instance().OnMessage(this, uMsg, wParam, lParam, bHandled);

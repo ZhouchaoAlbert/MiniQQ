@@ -14,6 +14,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QQSkin", "..\QQSkin\QQSkin.vcxproj", "{F222EDA9-1CB1-46CC-B0A2-F14B6A360F1F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{58CE0806-C972-4DC1-B2B8-F529283F2337} = {58CE0806-C972-4DC1-B2B8-F529283F2337}
+		{2C1D07A2-3128-409C-8504-53A56721EDC7} = {2C1D07A2-3128-409C-8504-53A56721EDC7}
 		{E106ACD7-4E53-4AEE-942B-D0DD426DB34E} = {E106ACD7-4E53-4AEE-942B-D0DD426DB34E}
 	EndProjectSection
 EndProject
@@ -37,6 +38,15 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Webkit", "..\Webkit\Webkit.vcxproj", "{C14D92D4-2C34-41E4-8B99-FED297E352AB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Service", "..\Service\Service.vcxproj", "{2C1D07A2-3128-409C-8504-53A56721EDC7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E29F91AC-AF6E-4EAA-8737-40ADD1005FF2} = {E29F91AC-AF6E-4EAA-8737-40ADD1005FF2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Browser", "..\Browser\Browser.vcxproj", "{D9B3F7A4-D727-42E1-99E6-ACCE08D2A6FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E29F91AC-AF6E-4EAA-8737-40ADD1005FF2} = {E29F91AC-AF6E-4EAA-8737-40ADD1005FF2}
+		{C14D92D4-2C34-41E4-8B99-FED297E352AB} = {C14D92D4-2C34-41E4-8B99-FED297E352AB}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +94,10 @@ Global
 		{2C1D07A2-3128-409C-8504-53A56721EDC7}.Debug|Win32.Build.0 = Debug|Win32
 		{2C1D07A2-3128-409C-8504-53A56721EDC7}.Release|Win32.ActiveCfg = Release|Win32
 		{2C1D07A2-3128-409C-8504-53A56721EDC7}.Release|Win32.Build.0 = Release|Win32
+		{D9B3F7A4-D727-42E1-99E6-ACCE08D2A6FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D9B3F7A4-D727-42E1-99E6-ACCE08D2A6FC}.Debug|Win32.Build.0 = Debug|Win32
+		{D9B3F7A4-D727-42E1-99E6-ACCE08D2A6FC}.Release|Win32.ActiveCfg = Release|Win32
+		{D9B3F7A4-D727-42E1-99E6-ACCE08D2A6FC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

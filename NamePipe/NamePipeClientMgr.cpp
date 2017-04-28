@@ -76,7 +76,7 @@ UINT32 CNamePipeClientMgr::Create(LPCSTR lpszName)
 	}
 
 	//¶Á  
-	HANDLE hHandle = (HANDLE)_beginthreadex(0, 0, ThreadReadFile, m_hPipe, 0, 0);
+	HANDLE hHandle = (HANDLE)_beginthreadex(0, 0, &ThreadReadFile, m_hPipe, 0, 0);
 	CloseHandle(hHandle);
 	return 0;
 }
@@ -112,7 +112,7 @@ UINT32 WINAPI CNamePipeClientMgr::ThreadReadFile(LPVOID pv)
  			CStringW strTestB;
  
 			buf >> Falg >> total >> seq >> cmd >> strTestA >> strTestB;
-		
+			MessageBox(NULL, strTestA, strTestB,MB_OK);
 			shared_ptr<Util::Buf::CByteIOS> buf;
 			buf = shared_ptr<Util::Buf::CByteIOS>(new Util::Buf::CByteIOS);
 			 total = 0;

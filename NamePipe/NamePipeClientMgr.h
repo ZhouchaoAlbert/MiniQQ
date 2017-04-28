@@ -10,9 +10,8 @@ public:
 	UINT32 Create(LPCSTR lpszName);
 	UINT32 Send(UINT16 cmd, UINT8* buf, UINT16 len);
 
-
-private:	
 	static UINT32 WINAPI ThreadReadFile(LPVOID pv);
+private:	
 
 	HANDLE  m_hPipe;
 };

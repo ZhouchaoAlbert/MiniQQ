@@ -266,3 +266,8 @@ CString Util::Path::GetFileNameWithoutExtension(LPCTSTR lpszPath)
 	strFileName = strFileName.Left(iFind);
 	return strFileName;
 }
+
+CString Util::Path::GetCefResPath()
+{
+	return GetInstallFolder() + _T("\\CefRes");
+}
