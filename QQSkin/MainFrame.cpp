@@ -48,7 +48,7 @@ void CMainFrame::Notify(TNotifyUI& msg)
 		CDuiString szName = msg.pSender->GetName();
 		if (szName == _T("Test"))
 		{
-			Aux::Browser::OpenPV();
+			//Aux::Browser::OpenPV();
 		}
 	}
 

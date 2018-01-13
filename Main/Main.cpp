@@ -32,7 +32,7 @@ void AA::OnTimer(void *pParam1, void *pParam2, void *pParam3)
 {
 	m_TimeSink.Stop();
 	//创建服务端
-	Aux::NameService::Create(STR_NAMEPIPE);
+	//Aux::NameService::Create(STR_NAMEPIPE);
 }
 #include "Singleton.h"
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int nCmdShow)
